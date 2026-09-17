@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Optional
 
+from pydantic import model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -14,9 +15,16 @@ class AppConfig(BaseSettings):
     )
 
     # Ingestion & Chunking
-    CHUNK_SIZE: int = 500
-    CHUNK_OVERLAP: int = 50
+    CHUNK_SIZE: int = 400
+    CHUNK_OVERLAP: int = 60
     MAX_UPLOAD_MB: int = 15
+
+    @model_validator(mode="after")
+    def validate_chunk_overlap(self) -> AppConfig:
+        if self.CHUNK_OVERLAP >= self.CHUNK_SIZE:
+            msg = f"OVERLAP ({self.CHUNK_OVERLAP}) >= SIZE ({self.CHUNK_SIZE})"
+            raise ValueError(msg)
+        return self
 
     # Embeddings & Vector Store
     EMBEDDING_MODEL: str = "BAAI/bge-small-en-v1.5"
