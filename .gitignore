@@ -1,0 +1,24 @@
+# Python / Virtual Environment
+.env
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# Data & Indexes (persisted artifacts not committed)
+data/index/
+data/documents/
+!data/documents/.gitkeep
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
