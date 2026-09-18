@@ -288,6 +288,9 @@ Required response headers: `Content-Type: text/event-stream`, `Cache-Control: no
 | `DUPLICATE_DOCUMENT` | content hash already indexed | 409 |
 | `FILE_TOO_LARGE` | above MAX_UPLOAD_MB | 413 |
 | `INDEX_MODEL_MISMATCH` | manifest model ≠ configured model | 500 |
+| `INDEX_DIMENSION_MISMATCH` | manifest dimension ≠ configured dimension | 500 |
+| `INDEX_TYPE_MISMATCH` | manifest index type ≠ configured type | 500 |
+| `INDEX_METADATA_MISMATCH` | vector count ≠ metadata/manifest count | 500 |
 | `EMBEDDING_FAILED` | embedder raised | ERROR event |
 | `RETRIEVAL_FAILED` | FAISS raised | ERROR event |
 | `PROVIDER_UNAVAILABLE` | network / 5xx / timeout | ERROR event |
