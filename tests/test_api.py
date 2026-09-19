@@ -3,6 +3,7 @@ from __future__ import annotations
 import io
 import json
 from collections.abc import Generator
+from pathlib import Path
 from unittest.mock import MagicMock
 
 import fitz
@@ -10,6 +11,7 @@ import numpy as np
 import pytest
 from fastapi.testclient import TestClient
 
+from backend.app.config import settings
 from backend.app.deps import (
     get_document_registry,
     reset_dependencies,
@@ -114,7 +116,9 @@ def test_health_endpoint_no_absolute_paths(client: TestClient) -> None:
 
 def test_kb_status_empty(client: TestClient) -> None:
     empty_store = VectorStore(
-        dimension=384, embedding_model="test-model", index_type="IndexFlatIP"
+        dimension=384,
+        embedding_model=settings.EMBEDDING_MODEL,
+        index_type="IndexFlatIP",
     )
     empty_registry = DummyDocumentRegistry([])
     set_test_dependencies(
@@ -139,7 +143,9 @@ def test_kb_status_empty(client: TestClient) -> None:
 
 def test_kb_status_ready(client: TestClient) -> None:
     store = VectorStore(
-        dimension=384, embedding_model="test-model", index_type="IndexFlatIP"
+        dimension=384,
+        embedding_model=settings.EMBEDDING_MODEL,
+        index_type="IndexFlatIP",
     )
     embedder = ConstantVectorEmbedder()
     chunk = _make_dummy_chunk(1, "Test chunk content.")
@@ -198,7 +204,9 @@ def test_chat_validation_empty_question(client: TestClient) -> None:
 
 def test_chat_validation_empty_kb(client: TestClient) -> None:
     empty_store = VectorStore(
-        dimension=384, embedding_model="test-model", index_type="IndexFlatIP"
+        dimension=384,
+        embedding_model=settings.EMBEDDING_MODEL,
+        index_type="IndexFlatIP",
     )
     set_test_dependencies(store=empty_store)
 
@@ -210,7 +218,9 @@ def test_chat_validation_empty_kb(client: TestClient) -> None:
 
 def test_chat_json_success(client: TestClient) -> None:
     store = VectorStore(
-        dimension=384, embedding_model="test-model", index_type="IndexFlatIP"
+        dimension=384,
+        embedding_model=settings.EMBEDDING_MODEL,
+        index_type="IndexFlatIP",
     )
     embedder = ConstantVectorEmbedder()
     chunk = _make_dummy_chunk(1, "Edge computing reduces latency.")
@@ -240,7 +250,9 @@ def test_chat_json_success(client: TestClient) -> None:
 def test_chat_stream_sse_ordering_and_framing(client: TestClient) -> None:
     """Verify real SSE stream, event ordering, framing, and headers."""
     store = VectorStore(
-        dimension=384, embedding_model="test-model", index_type="IndexFlatIP"
+        dimension=384,
+        embedding_model=settings.EMBEDDING_MODEL,
+        index_type="IndexFlatIP",
     )
     embedder = ConstantVectorEmbedder()
     chunk = _make_dummy_chunk(1, "Edge computing reduces latency.")
@@ -307,10 +319,15 @@ def test_chat_stream_sse_ordering_and_framing(client: TestClient) -> None:
     assert types == expected_types
 
 
-def test_post_documents_real_ingestion_sse_stream(client: TestClient) -> None:
+def test_post_documents_real_ingestion_sse_stream(
+    client: TestClient, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     """Verify POST /api/documents produces real ingestion SSE events."""
+    monkeypatch.setattr(settings, "INDEX_DIR", str(tmp_path))
     store = VectorStore(
-        dimension=384, embedding_model="test-model", index_type="IndexFlatIP"
+        dimension=384,
+        embedding_model=settings.EMBEDDING_MODEL,
+        index_type="IndexFlatIP",
     )
     embedder = ConstantVectorEmbedder()
     registry = DummyDocumentRegistry([])
@@ -350,7 +367,9 @@ def test_post_documents_real_ingestion_sse_stream(client: TestClient) -> None:
 def test_post_documents_duplicate_detection(client: TestClient) -> None:
     """Verify POST /api/documents emits DOCUMENT_DUPLICATE for existing doc hash."""
     store = VectorStore(
-        dimension=384, embedding_model="test-model", index_type="IndexFlatIP"
+        dimension=384,
+        embedding_model=settings.EMBEDDING_MODEL,
+        index_type="IndexFlatIP",
     )
     embedder = ConstantVectorEmbedder()
 
@@ -401,7 +420,9 @@ def test_error_masking_no_raw_exception_leakage(client: TestClient) -> None:
 
     class BrokenRetriever:
         store = VectorStore(
-            dimension=384, embedding_model="test-model", index_type="IndexFlatIP"
+            dimension=384,
+            embedding_model=settings.EMBEDDING_MODEL,
+            index_type="IndexFlatIP",
         )
         store.add_chunks(
             [_make_dummy_chunk(1, "c")],

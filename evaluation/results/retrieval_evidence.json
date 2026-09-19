@@ -1,0 +1,2262 @@
+[
+  {
+    "question_id": "q01",
+    "question": "Why does latency matter for edge computing control loops?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "edge_computing_iot.pdf",
+        "page": 1
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p001__c0001",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.7338,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "Edge Computing for Intelligent IoT Systems\n\nA technical overview of architecture, data handling, network design, security posture and\non-device inference for connected sensing systems.\n\nDocument type\nTechnical overview\n\nRevision\n1.2\n\nStatus\nWorking draft\n\nAudience\nSystems engineers, platform archite...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p001__c0002",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.7169,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "1.1 Why locality matters\n\nThree pressures push computation outward. The first is latency. A control loop that must close within 10 ms\ncannot tolerate a round trip to a regional data centre, which typically costs between 20 ms and 80 ms even under\nfavourable conditions. The second is bandwidth cost. ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p002__c0004",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.7115,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "The gateway is also the natural place to enforce schema. Devices in the field are heterogeneous and are replaced\npiecemeal over years, so a fleet almost always contains several firmware generations at once. Normalising their\noutput at the gateway keeps that variation from propagating into every down...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p006__c0012",
+        "document": "edge_computing_iot.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.7017,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "8.3 Agricultural sensing\n\nField deployments face the harshest combination of constraints: no mains power, intermittent cellular coverage\nand wide temperature ranges. Aggressive local filtering, opportunistic transmission when a link becomes available, and tolerance of multi-day gaps are not optimisa...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p002__c0003",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.6925,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "2. Edge Computing Architecture\n\nA workable reference architecture separates concerns into four tiers. Each tier has a characteristic power budget,\na characteristic failure mode and a characteristic unit of work. Designs that blur these boundaries tend to\naccumulate coupling that becomes expensive to...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q02",
+    "question": "What are the four reference architecture tiers in edge computing?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "edge_computing_iot.pdf",
+        "page": 2
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p002__c0003",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.8015,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "2. Edge Computing Architecture\n\nA workable reference architecture separates concerns into four tiers. Each tier has a characteristic power budget,\na characteristic failure mode and a characteristic unit of work. Designs that blur these boundaries tend to\naccumulate coupling that becomes expensive to...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p001__c0001",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.7727,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Edge Computing for Intelligent IoT Systems\n\nA technical overview of architecture, data handling, network design, security posture and\non-device inference for connected sensing systems.\n\nDocument type\nTechnical overview\n\nRevision\n1.2\n\nStatus\nWorking draft\n\nAudience\nSystems engineers, platform archite...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p002__c0004",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.7246,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "The gateway is also the natural place to enforce schema. Devices in the field are heterogeneous and are replaced\npiecemeal over years, so a fleet almost always contains several firmware generations at once. Normalising their\noutput at the gateway keeps that variation from propagating into every down...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p006__c0012",
+        "document": "edge_computing_iot.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.679,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "8.3 Agricultural sensing\n\nField deployments face the harshest combination of constraints: no mains power, intermittent cellular coverage\nand wide temperature ranges. Aggressive local filtering, opportunistic transmission when a link becomes available, and tolerance of multi-day gaps are not optimisa...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p005__c0010",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 10,
+        "score": 0.6759,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Whatever the arrangement, model versioning must be explicit. An edge fleet will run several versions simultaneously during any rollout, and being unable to answer which version produced a given prediction makes\nincident investigation nearly impossible.\n\n7. Deployment Challenges\n\nThe difficulties tha...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q03",
+    "question": "What role does the edge gateway play in schema enforcement?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "edge_computing_iot.pdf",
+        "page": 2
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 4,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p002__c0004",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.8148,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "The gateway is also the natural place to enforce schema. Devices in the field are heterogeneous and are replaced\npiecemeal over years, so a fleet almost always contains several firmware generations at once. Normalising their\noutput at the gateway keeps that variation from propagating into every down...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p001__c0001",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.7151,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Edge Computing for Intelligent IoT Systems\n\nA technical overview of architecture, data handling, network design, security posture and\non-device inference for connected sensing systems.\n\nDocument type\nTechnical overview\n\nRevision\n1.2\n\nStatus\nWorking draft\n\nAudience\nSystems engineers, platform archite...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p002__c0003",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.6992,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "2. Edge Computing Architecture\n\nA workable reference architecture separates concerns into four tiers. Each tier has a characteristic power budget,\na characteristic failure mode and a characteristic unit of work. Designs that blur these boundaries tend to\naccumulate coupling that becomes expensive to...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p004__c0008",
+        "document": "edge_computing_iot.pdf",
+        "page": 4,
+        "chunk_index": 8,
+        "score": 0.6958,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nSupport key rotation from the outset; retrofitting it is considerably harder.\n\n\u00b7\nLog authentication failures at the gateway, where storage and clocks are reliable.\n\n\u00b7\nAssume any device may be physically removed and examined by an adversary.\n\n5.2 Data minimisation\n\nProcessing locally offers a priva...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "campus_resource_management__p008__c0014",
+        "document": "campus_resource_management.pdf",
+        "page": 8,
+        "chunk_index": 14,
+        "score": 0.665,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "11.1 Rollback\n\nRollback redeploys the previous image tag. Because migrations are backward compatible for one release, no\nschema action is required, and the procedure is a single documented command rather than an improvised\nsequence carried out under pressure. Any migration that cannot satisfy this p...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q04",
+    "question": "What are the stages of local signal acquisition and conditioning?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "edge_computing_iot.pdf",
+        "page": 3
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p003__c0005",
+        "document": "edge_computing_iot.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.6393,
+        "above_threshold": false,
+        "is_relevant": true,
+        "text_preview": "1.\nAcquisition. The raw sample stream is read from the transducer, typically with hardware oversampling to\nimprove effective resolution.\n\n2.\nConditioning. Offsets are removed, calibration coefficients are applied, and obviously invalid readings are\ndiscarded.\n\n3.\nFeature extraction. Windows of sampl...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p006__c0011",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.6045,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Table 3. Model Comparison on the test set. Illustrative values produced for this report; they do not describe a real experiment.\n\nGradient boosting leads on every metric. The margin over random forest is modest and would need repeated runs\nwith different seeds to be treated as meaningful. The convol...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p006__c0012",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.586,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Actual negative\n700\n609,600\n610,300\n\nColumn total\n4,668\n609,992\n614,660\n\nTable 5. Confusion matrix for gradient boosting on the test split, counted per ten-minute window rather than per failure event.\n\nCounting per window overstates the operational burden, because the 700 false positive windows clus...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p001__c0002",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.5844,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "1.1 Why locality matters\n\nThree pressures push computation outward. The first is latency. A control loop that must close within 10 ms\ncannot tolerate a round trip to a regional data centre, which typically costs between 20 ms and 80 ms even under\nfavourable conditions. The second is bandwidth cost. ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p006__c0011",
+        "document": "edge_computing_iot.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.572,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "mounted six metres above a production line. Dual-bank firmware layouts, in which a new image is written to an\ninactive bank and activated only after verification, make the failure mode recoverable. Staged rollout across a\nsmall cohort before the full fleet catches problems that testing did not.\n\n\u00b7\nV...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q05",
+    "question": "What are the typical range and data rates for BLE 5 and Wi-Fi 6?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "edge_computing_iot.pdf",
+        "page": 3
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p003__c0006",
+        "document": "edge_computing_iot.pdf",
+        "page": 3,
+        "chunk_index": 6,
+        "score": 0.6601,
+        "above_threshold": false,
+        "is_relevant": true,
+        "text_preview": "Link type\nTypical rate\nRange\nSuited to\n\nBLE 5\n125 kbps\u00b72 Mbps\n10\u00b7100 m\nBattery sensors\n\n802.15.4 mesh\n250 kbps\n30\u00b7300 m\nDense sensing\n\nWi-Fi 6\n50\u00b7800 Mbps\n20\u00b780 m\nGateways, cameras\n\nWired Ethernet\n1\u00b710 Gbps\n100 m\nNear-edge nodes\n\nLTE-M / NB-IoT\n20\u00b7400 kbps\nkilometres\nRemote assets\n\nTable 2. Approxim...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p004__c0007",
+        "document": "edge_computing_iot.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.5491,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "workarounds.\n\nQuality of service settings deserve explicit thought rather than being left at their defaults. At-most-once delivery\nis acceptable for a high-rate telemetry stream where a lost sample is immaterial. At-least-once delivery is\nappropriate for alerts, provided consumers are idempotent. Ex...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p002__c0003",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.533,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "2. Edge Computing Architecture\n\nA workable reference architecture separates concerns into four tiers. Each tier has a characteristic power budget,\na characteristic failure mode and a characteristic unit of work. Designs that blur these boundaries tend to\naccumulate coupling that becomes expensive to...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p006__c0012",
+        "document": "edge_computing_iot.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.5311,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "8.3 Agricultural sensing\n\nField deployments face the harshest combination of constraints: no mains power, intermittent cellular coverage\nand wide temperature ranges. Aggressive local filtering, opportunistic transmission when a link becomes available, and tolerance of multi-day gaps are not optimisa...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p003__c0005",
+        "document": "edge_computing_iot.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.5233,
+        "above_threshold": false,
+        "is_relevant": true,
+        "text_preview": "1.\nAcquisition. The raw sample stream is read from the transducer, typically with hardware oversampling to\nimprove effective resolution.\n\n2.\nConditioning. Offsets are removed, calibration coefficients are applied, and obviously invalid readings are\ndiscarded.\n\n3.\nFeature extraction. Windows of sampl...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q06",
+    "question": "How should quality of service settings be configured for telemetry?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "edge_computing_iot.pdf",
+        "page": 4
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 1,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p004__c0007",
+        "document": "edge_computing_iot.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.7108,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "workarounds.\n\nQuality of service settings deserve explicit thought rather than being left at their defaults. At-most-once delivery\nis acceptable for a high-rate telemetry stream where a lost sample is immaterial. At-least-once delivery is\nappropriate for alerts, provided consumers are idempotent. Ex...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p006__c0011",
+        "document": "edge_computing_iot.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.6389,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "mounted six metres above a production line. Dual-bank firmware layouts, in which a new image is written to an\ninactive bank and activated only after verification, make the failure mode recoverable. Staged rollout across a\nsmall cohort before the full fleet catches problems that testing did not.\n\n\u00b7\nV...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p001__c0002",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.638,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "1.1 Why locality matters\n\nThree pressures push computation outward. The first is latency. A control loop that must close within 10 ms\ncannot tolerate a round trip to a regional data centre, which typically costs between 20 ms and 80 ms even under\nfavourable conditions. The second is bandwidth cost. ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p006__c0012",
+        "document": "edge_computing_iot.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.6314,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "8.3 Agricultural sensing\n\nField deployments face the harshest combination of constraints: no mains power, intermittent cellular coverage\nand wide temperature ranges. Aggressive local filtering, opportunistic transmission when a link becomes available, and tolerance of multi-day gaps are not optimisa...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "campus_resource_management__p002__c0003",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.6304,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "require approval.\n\n4.\nWhere approval is required, a request enters a pending state and notifies the approver, who may accept or\ndecline with a comment.\n\n5.\nThe system prevents double booking under concurrent load without relying on client-side coordination.\n\n6.\nAdministrators can produce utilisation...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q07",
+    "question": "What key rotation recommendations apply to edge gateway logging?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "edge_computing_iot.pdf",
+        "page": 4
+      }
+    ],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.3333,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p002__c0004",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.7256,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "The gateway is also the natural place to enforce schema. Devices in the field are heterogeneous and are replaced\npiecemeal over years, so a fleet almost always contains several firmware generations at once. Normalising their\noutput at the gateway keeps that variation from propagating into every down...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p006__c0011",
+        "document": "edge_computing_iot.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.7229,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "mounted six metres above a production line. Dual-bank firmware layouts, in which a new image is written to an\ninactive bank and activated only after verification, make the failure mode recoverable. Staged rollout across a\nsmall cohort before the full fleet catches problems that testing did not.\n\n\u00b7\nV...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p004__c0008",
+        "document": "edge_computing_iot.pdf",
+        "page": 4,
+        "chunk_index": 8,
+        "score": 0.7032,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "\u00b7\nSupport key rotation from the outset; retrofitting it is considerably harder.\n\n\u00b7\nLog authentication failures at the gateway, where storage and clocks are reliable.\n\n\u00b7\nAssume any device may be physically removed and examined by an adversary.\n\n5.2 Data minimisation\n\nProcessing locally offers a priva...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p003__c0005",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.6895,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Property\nValue\nNote\n\nMachines\n48\nCentrifugal pumps, 15\u00b775 kW\n\nObservation period\n14 months\nSimulated, continuous\n\nAggregate records\n2,948,160\n10-minute windows\n\nPositive windows\n20,637\n0.70 % of total\n\nRecorded failures\n63\nAcross 29 distinct machines\n\nChannels per machine\n4\nTemperature, vibration, c...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p004__c0007",
+        "document": "edge_computing_iot.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.677,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "workarounds.\n\nQuality of service settings deserve explicit thought rather than being left at their defaults. At-most-once delivery\nis acceptable for a high-rate telemetry stream where a lost sample is immaterial. At-least-once delivery is\nappropriate for alerts, provided consumers are idempotent. Ex...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q08",
+    "question": "What model compression techniques are used for constrained edge devices?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "edge_computing_iot.pdf",
+        "page": 5
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p005__c0009",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.7581,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "512 KB of RAM, and its working buffers must fit too.\n\n6.1 Model compression\n\nThree techniques dominate. Quantisation converts floating point weights to 8-bit integers, reducing model size\nby roughly a factor of four and often improving inference speed on hardware lacking a floating point unit.\nPruni...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p004__c0008",
+        "document": "edge_computing_iot.pdf",
+        "page": 4,
+        "chunk_index": 8,
+        "score": 0.7008,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nSupport key rotation from the outset; retrofitting it is considerably harder.\n\n\u00b7\nLog authentication failures at the gateway, where storage and clocks are reliable.\n\n\u00b7\nAssume any device may be physically removed and examined by an adversary.\n\n5.2 Data minimisation\n\nProcessing locally offers a priva...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p001__c0001",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.6892,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Edge Computing for Intelligent IoT Systems\n\nA technical overview of architecture, data handling, network design, security posture and\non-device inference for connected sensing systems.\n\nDocument type\nTechnical overview\n\nRevision\n1.2\n\nStatus\nWorking draft\n\nAudience\nSystems engineers, platform archite...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p002__c0003",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.6885,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "2. Edge Computing Architecture\n\nA workable reference architecture separates concerns into four tiers. Each tier has a characteristic power budget,\na characteristic failure mode and a characteristic unit of work. Designs that blur these boundaries tend to\naccumulate coupling that becomes expensive to...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p006__c0012",
+        "document": "edge_computing_iot.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.6751,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "8.3 Agricultural sensing\n\nField deployments face the harshest combination of constraints: no mains power, intermittent cellular coverage\nand wide temperature ranges. Aggressive local filtering, opportunistic transmission when a link becomes available, and tolerance of multi-day gaps are not optimisa...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q09",
+    "question": "How does condition-based maintenance differ from corrective maintenance?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 3,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p001__c0002",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.7503,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "Maintenance strategies are conventionally divided into three categories. Corrective maintenance repairs equipment after it fails. Preventive maintenance services equipment on a fixed schedule regardless of condition.\nPredictive maintenance attempts to service equipment shortly before it would have f...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p001__c0001",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.7018,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "Predictive Maintenance Using Machine Learning for\nIndustrial Equipment\n\nAn original, hypothetical study of vibration- and thermal-based fault prediction on rotating\nmachinery. All data and results described here were constructed for illustration and do not\nreport a real experiment.\n\nDocument type\nHy...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p008__c0015",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 8,
+        "chunk_index": 15,
+        "score": 0.6772,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Several directions follow naturally. Reformulating the task as remaining useful life regression would give maintenance planners a continuous estimate rather than a binary alert, at the cost of requiring run-to-failure labels.\nExtending the feature set with acoustic measurements may separate failure ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p007__c0013",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 7,
+        "chunk_index": 13,
+        "score": 0.6627,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "The second is that the operating threshold is a business parameter wearing technical clothing. Moving it changes\nthe balance between missed failures and unnecessary inspections, and the correct balance depends on the cost of\neach. In a plant where an unplanned stoppage costs two orders of magnitude ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p006__c0012",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.6536,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Actual negative\n700\n609,600\n610,300\n\nColumn total\n4,668\n609,992\n614,660\n\nTable 5. Confusion matrix for gradient boosting on the test split, counted per ten-minute window rather than per failure event.\n\nCounting per window overstates the operational burden, because the 700 false positive windows clus...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q10",
+    "question": "Why is headline accuracy an uninformative metric for predictive maintenance?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1
+      }
+    ],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.5,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p002__c0003",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.7963,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "at every opportunity achieves better than 99 percent accuracy while being entirely useless, which is why\naccuracy is not reported as a headline metric anywhere in this document.\n\n3. Problem Definition\n\nThe task is formulated as binary classification over fixed-length windows. For a window ending at ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p001__c0002",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.7369,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "Maintenance strategies are conventionally divided into three categories. Corrective maintenance repairs equipment after it fails. Preventive maintenance services equipment on a fixed schedule regardless of condition.\nPredictive maintenance attempts to service equipment shortly before it would have f...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p008__c0015",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 8,
+        "chunk_index": 15,
+        "score": 0.725,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Several directions follow naturally. Reformulating the task as remaining useful life regression would give maintenance planners a continuous estimate rather than a binary alert, at the cost of requiring run-to-failure labels.\nExtending the feature set with acoustic measurements may separate failure ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p006__c0012",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.7204,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Actual negative\n700\n609,600\n610,300\n\nColumn total\n4,668\n609,992\n614,660\n\nTable 5. Confusion matrix for gradient boosting on the test split, counted per ten-minute window rather than per failure event.\n\nCounting per window overstates the operational burden, because the 700 false positive windows clus...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p006__c0011",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.7026,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Table 3. Model Comparison on the test set. Illustrative values produced for this report; they do not describe a real experiment.\n\nGradient boosting leads on every metric. The margin over random forest is modest and would need repeated runs\nwith different seeds to be treated as meaningful. The convol...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q11",
+    "question": "What sensors are installed on the simulated centrifugal pumps?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2
+      }
+    ],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.3333,
+    "decision": "proceed",
+    "selected_count": 1,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p001__c0001",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.6835,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Predictive Maintenance Using Machine Learning for\nIndustrial Equipment\n\nAn original, hypothetical study of vibration- and thermal-based fault prediction on rotating\nmachinery. All data and results described here were constructed for illustration and do not\nreport a real experiment.\n\nDocument type\nHy...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p003__c0005",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.6429,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Property\nValue\nNote\n\nMachines\n48\nCentrifugal pumps, 15\u00b775 kW\n\nObservation period\n14 months\nSimulated, continuous\n\nAggregate records\n2,948,160\n10-minute windows\n\nPositive windows\n20,637\n0.70 % of total\n\nRecorded failures\n63\nAcross 29 distinct machines\n\nChannels per machine\n4\nTemperature, vibration, c...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p002__c0004",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.6414,
+        "above_threshold": false,
+        "is_relevant": true,
+        "text_preview": "4. Data Collection\n\nEach simulated pump carries four sensing channels. A thermocouple on the bearing housing reports temperature\nat 1 Hz. A triaxial accelerometer mounted on the drive-end bearing samples vibration at 12.8 kHz. A current\ntransformer on the motor supply reports RMS current at 10 Hz. A...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p008__c0015",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 8,
+        "chunk_index": 15,
+        "score": 0.6066,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Several directions follow naturally. Reformulating the task as remaining useful life regression would give maintenance planners a continuous estimate rather than a binary alert, at the cost of requiring run-to-failure labels.\nExtending the feature set with acoustic measurements may separate failure ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p007__c0014",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 7,
+        "chunk_index": 14,
+        "score": 0.6063,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "10. Limitations\n\nThis report describes a constructed illustration, and its limitations should be read as at least as instructive as its\nresults.\n\n\u00b7\nThe dataset is synthetic. Real fleets exhibit sensor drift, mislabelled work orders and failure modes absent\nfrom any simulation.\n\n\u00b7\nSixty-three failure...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q12",
+    "question": "How many total 10-minute aggregate windows were collected in the pump study?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2
+      }
+    ],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.5,
+    "decision": "proceed",
+    "selected_count": 2,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p003__c0005",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.6798,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Property\nValue\nNote\n\nMachines\n48\nCentrifugal pumps, 15\u00b775 kW\n\nObservation period\n14 months\nSimulated, continuous\n\nAggregate records\n2,948,160\n10-minute windows\n\nPositive windows\n20,637\n0.70 % of total\n\nRecorded failures\n63\nAcross 29 distinct machines\n\nChannels per machine\n4\nTemperature, vibration, c...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p002__c0004",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.6721,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "4. Data Collection\n\nEach simulated pump carries four sensing channels. A thermocouple on the bearing housing reports temperature\nat 1 Hz. A triaxial accelerometer mounted on the drive-end bearing samples vibration at 12.8 kHz. A current\ntransformer on the motor supply reports RMS current at 10 Hz. A...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p003__c0005",
+        "document": "edge_computing_iot.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.6221,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "1.\nAcquisition. The raw sample stream is read from the transducer, typically with hardware oversampling to\nimprove effective resolution.\n\n2.\nConditioning. Offsets are removed, calibration coefficients are applied, and obviously invalid readings are\ndiscarded.\n\n3.\nFeature extraction. Windows of sampl...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p002__c0003",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.615,
+        "above_threshold": false,
+        "is_relevant": true,
+        "text_preview": "at every opportunity achieves better than 99 percent accuracy while being entirely useless, which is why\naccuracy is not reported as a headline metric anywhere in this document.\n\n3. Problem Definition\n\nThe task is formulated as binary classification over fixed-length windows. For a window ending at ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p007__c0014",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 7,
+        "chunk_index": 14,
+        "score": 0.6066,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "10. Limitations\n\nThis report describes a constructed illustration, and its limitations should be read as at least as instructive as its\nresults.\n\n\u00b7\nThe dataset is synthetic. Real fleets exhibit sensor drift, mislabelled work orders and failure modes absent\nfrom any simulation.\n\n\u00b7\nSixty-three failure...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q13",
+    "question": "Why is shaft speed critical when defining spectral vibration bands?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 3
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 3,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p003__c0006",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 3,
+        "chunk_index": 6,
+        "score": 0.8146,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "Shaft speed deserves particular care because it is both a measurement and a parameter. The spectral bands\ndescribed in Section 5 are defined relative to rotational frequency, so an error in RPM shifts every band and\ncorrupts features that otherwise appear well behaved. Windows in which measured spee...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p008__c0015",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 8,
+        "chunk_index": 15,
+        "score": 0.6794,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Several directions follow naturally. Reformulating the task as remaining useful life regression would give maintenance planners a continuous estimate rather than a binary alert, at the cost of requiring run-to-failure labels.\nExtending the feature set with acoustic measurements may separate failure ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p006__c0012",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.6764,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Actual negative\n700\n609,600\n610,300\n\nColumn total\n4,668\n609,992\n614,660\n\nTable 5. Confusion matrix for gradient boosting on the test split, counted per ten-minute window rather than per failure event.\n\nCounting per window overstates the operational burden, because the 700 false positive windows clus...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p002__c0004",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.6627,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "4. Data Collection\n\nEach simulated pump carries four sensing channels. A thermocouple on the bearing housing reports temperature\nat 1 Hz. A triaxial accelerometer mounted on the drive-end bearing samples vibration at 12.8 kHz. A current\ntransformer on the motor supply reports RMS current at 10 Hz. A...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p001__c0001",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.6543,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Predictive Maintenance Using Machine Learning for\nIndustrial Equipment\n\nAn original, hypothetical study of vibration- and thermal-based fault prediction on rotating\nmachinery. All data and results described here were constructed for illustration and do not\nreport a real experiment.\n\nDocument type\nHy...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q14",
+    "question": "What operating-context features are included so the model can distinguish genuine anomalies from ordinary load changes?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 4
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p004__c0007",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.7639,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "3.\nTrend: the ratio of the current window value to the median of the preceding 144 windows, giving a\nper-machine baseline that adapts slowly.\n\n4.\nOperating context: mean RPM, mean current, and a derived load estimate, included so that the model can\ndistinguish genuine anomalies from ordinary load ch...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p006__c0012",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.7332,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Actual negative\n700\n609,600\n610,300\n\nColumn total\n4,668\n609,992\n614,660\n\nTable 5. Confusion matrix for gradient boosting on the test split, counted per ten-minute window rather than per failure event.\n\nCounting per window overstates the operational burden, because the 700 false positive windows clus...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p003__c0005",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.7213,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Property\nValue\nNote\n\nMachines\n48\nCentrifugal pumps, 15\u00b775 kW\n\nObservation period\n14 months\nSimulated, continuous\n\nAggregate records\n2,948,160\n10-minute windows\n\nPositive windows\n20,637\n0.70 % of total\n\nRecorded failures\n63\nAcross 29 distinct machines\n\nChannels per machine\n4\nTemperature, vibration, c...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p007__c0014",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 7,
+        "chunk_index": 14,
+        "score": 0.7034,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "10. Limitations\n\nThis report describes a constructed illustration, and its limitations should be read as at least as instructive as its\nresults.\n\n\u00b7\nThe dataset is synthetic. Real fleets exhibit sensor drift, mislabelled work orders and failure modes absent\nfrom any simulation.\n\n\u00b7\nSixty-three failure...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p008__c0015",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 8,
+        "chunk_index": 15,
+        "score": 0.6913,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Several directions follow naturally. Reformulating the task as remaining useful life regression would give maintenance planners a continuous estimate rather than a binary alert, at the cost of requiring run-to-failure labels.\nExtending the feature set with acoustic measurements may separate failure ...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q15",
+    "question": "What architecture is used for the 1D convolutional neural network model?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 5
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 2,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p005__c0009",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.7406,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "6.4 One-dimensional convolutional network\n\nA small network operating on sequences of 24 consecutive windows, comprising three convolutional blocks with\n32, 64 and 64 filters followed by global pooling and a dense classification head. It has access to temporal structure the tabular models do not, but...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p005__c0009",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.6765,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "512 KB of RAM, and its working buffers must fit too.\n\n6.1 Model compression\n\nThree techniques dominate. Quantisation converts floating point weights to 8-bit integers, reducing model size\nby roughly a factor of four and often improving inference speed on hardware lacking a floating point unit.\nPruni...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p001__c0001",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.6526,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Edge Computing for Intelligent IoT Systems\n\nA technical overview of architecture, data handling, network design, security posture and\non-device inference for connected sensing systems.\n\nDocument type\nTechnical overview\n\nRevision\n1.2\n\nStatus\nWorking draft\n\nAudience\nSystems engineers, platform archite...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p004__c0008",
+        "document": "edge_computing_iot.pdf",
+        "page": 4,
+        "chunk_index": 8,
+        "score": 0.6364,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nSupport key rotation from the outset; retrofitting it is considerably harder.\n\n\u00b7\nLog authentication failures at the gateway, where storage and clocks are reliable.\n\n\u00b7\nAssume any device may be physically removed and examined by an adversary.\n\n5.2 Data minimisation\n\nProcessing locally offers a priva...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p007__c0013",
+        "document": "edge_computing_iot.pdf",
+        "page": 7,
+        "chunk_index": 13,
+        "score": 0.6348,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "than model architecture does. Projects that treat these as first-order concerns from the beginning tend to reach\nproduction; those that treat them as operational details to be resolved later tend to stall at the pilot stage.\n\nFuture work in this area is likely to concentrate on making heterogeneous ...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q16",
+    "question": "How is the operating threshold selected on the validation set?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 5
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 3,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p005__c0010",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 5,
+        "chunk_index": 10,
+        "score": 0.8502,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "7.3 Threshold selection\n\nModels output a score rather than a decision. The operating threshold is selected on the validation set to\nmaximise F1-score, then applied unchanged to the test set. Selecting the threshold on the test set would inflate\nevery reported number and is a common source of irrepro...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p007__c0013",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 7,
+        "chunk_index": 13,
+        "score": 0.6817,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "The second is that the operating threshold is a business parameter wearing technical clothing. Moving it changes\nthe balance between missed failures and unnecessary inspections, and the correct balance depends on the cost of\neach. In a plant where an unplanned stoppage costs two orders of magnitude ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p006__c0012",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.6748,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Actual negative\n700\n609,600\n610,300\n\nColumn total\n4,668\n609,992\n614,660\n\nTable 5. Confusion matrix for gradient boosting on the test split, counted per ten-minute window rather than per failure event.\n\nCounting per window overstates the operational burden, because the 700 false positive windows clus...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p002__c0003",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.6347,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "at every opportunity achieves better than 99 percent accuracy while being entirely useless, which is why\naccuracy is not reported as a headline metric anywhere in this document.\n\n3. Problem Definition\n\nThe task is formulated as binary classification over fixed-length windows. For a window ending at ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p006__c0011",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.6304,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Table 3. Model Comparison on the test set. Illustrative values produced for this report; they do not describe a real experiment.\n\nGradient boosting leads on every metric. The margin over random forest is modest and would need repeated runs\nwith different seeds to be treated as meaningful. The convol...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q17",
+    "question": "What can an authenticated member do regarding resource availability and reservations?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "campus_resource_management.pdf",
+        "page": 1
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "campus_resource_management__p001__c0002",
+        "document": "campus_resource_management.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.8424,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "2.1 Functional requirements\n\n1.\nAn authenticated member of the institution can view the availability of any resource they are eligible to\nbook, for any date within the booking window.\n\n2.\nA user can create, amend and cancel their own reservations subject to the resource's notice period and\ncancellat...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "campus_resource_management__p003__c0005",
+        "document": "campus_resource_management.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.7574,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "ever missed. Nothing in the system may treat a cache miss as an error, and no write path may read availability\nfrom the cache.\n\n4. User Management\n\nAuthentication is delegated to the institutional identity provider over OpenID Connect. The platform receives a\nsigned token, validates its signature an...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "campus_resource_management__p001__c0001",
+        "document": "campus_resource_management.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.7278,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "Design and Implementation Guide for a Campus\nResource Management Platform\n\nEngineering documentation covering requirements, service architecture, identity, booking logic,\nnotifications, API surface, persistence, error handling, testing and deployment.\n\nDocument type\nEngineering design guide\n\nVersion...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p004__c0008",
+        "document": "campus_resource_management.pdf",
+        "page": 4,
+        "chunk_index": 8,
+        "score": 0.7137,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nApproval required \u00b7 to the resource owner, immediately.\n\n\u00b7\nRequest approved or declined \u00b7 to the requesting user, immediately.\n\n\u00b7\nUpcoming reservation reminder \u00b7 to the booking user, 24 hours before start.\n\n\u00b7\nCancellation notice \u00b7 to all affected parties, immediately.\n\n6.1 Delivery guarantees\n\nThe...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "campus_resource_management__p003__c0006",
+        "document": "campus_resource_management.pdf",
+        "page": 3,
+        "chunk_index": 6,
+        "score": 0.7068,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "5. Resource Booking\n\nBooking is the core transaction and the only part of the system where concurrency genuinely matters. Two users\nattempting to reserve the same laboratory bench for the same hour must produce exactly one successful reservation and one clear rejection, regardless of how closely the...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q18",
+    "question": "What components form the database and cache architecture for room booking?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "campus_resource_management.pdf",
+        "page": 2
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 4,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "campus_resource_management__p002__c0004",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.7371,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "\u00b7\nDatabase: a relational store holding resources, reservations, users and audit records.\n\n\u00b7\nCache: an in-memory store holding computed availability windows and session material, treated as disposable.\n\n\u00b7\nQueue: a durable job queue for notification delivery and report generation.\n\n3.1 Module boundari...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "campus_resource_management__p002__c0003",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.7069,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "require approval.\n\n4.\nWhere approval is required, a request enters a pending state and notifies the approver, who may accept or\ndecline with a comment.\n\n5.\nThe system prevents double booking under concurrent load without relying on client-side coordination.\n\n6.\nAdministrators can produce utilisation...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "campus_resource_management__p001__c0001",
+        "document": "campus_resource_management.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.6783,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Design and Implementation Guide for a Campus\nResource Management Platform\n\nEngineering documentation covering requirements, service architecture, identity, booking logic,\nnotifications, API surface, persistence, error handling, testing and deployment.\n\nDocument type\nEngineering design guide\n\nVersion...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p003__c0006",
+        "document": "campus_resource_management.pdf",
+        "page": 3,
+        "chunk_index": 6,
+        "score": 0.6743,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "5. Resource Booking\n\nBooking is the core transaction and the only part of the system where concurrency genuinely matters. Two users\nattempting to reserve the same laboratory bench for the same hour must produce exactly one successful reservation and one clear rejection, regardless of how closely the...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "campus_resource_management__p006__c0011",
+        "document": "campus_resource_management.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.669,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "audit_entry\nentry_id, actor_id, action, object_id, at\nAppend-only change log\n\nTable 4. Principal tables in the schema. Column lists are indicative rather than complete.\n\n8.2 Indexing\n\nThree indexes carry almost all query load: a GiST index on the reservation period supporting both the exclusion\ncons...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q19",
+    "question": "Why are cache misses not treated as errors in the resource management platform?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "campus_resource_management.pdf",
+        "page": 3
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "campus_resource_management__p003__c0006",
+        "document": "campus_resource_management.pdf",
+        "page": 3,
+        "chunk_index": 6,
+        "score": 0.7267,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "5. Resource Booking\n\nBooking is the core transaction and the only part of the system where concurrency genuinely matters. Two users\nattempting to reserve the same laboratory bench for the same hour must produce exactly one successful reservation and one clear rejection, regardless of how closely the...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "campus_resource_management__p001__c0001",
+        "document": "campus_resource_management.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.6928,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "Design and Implementation Guide for a Campus\nResource Management Platform\n\nEngineering documentation covering requirements, service architecture, identity, booking logic,\nnotifications, API surface, persistence, error handling, testing and deployment.\n\nDocument type\nEngineering design guide\n\nVersion...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "campus_resource_management__p002__c0004",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.6926,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nDatabase: a relational store holding resources, reservations, users and audit records.\n\n\u00b7\nCache: an in-memory store holding computed availability windows and session material, treated as disposable.\n\n\u00b7\nQueue: a durable job queue for notification delivery and report generation.\n\n3.1 Module boundari...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p003__c0005",
+        "document": "campus_resource_management.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.6917,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "ever missed. Nothing in the system may treat a cache miss as an error, and no write path may read availability\nfrom the cache.\n\n4. User Management\n\nAuthentication is delegated to the institutional identity provider over OpenID Connect. The platform receives a\nsigned token, validates its signature an...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p002__c0003",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.6858,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "at every opportunity achieves better than 99 percent accuracy while being entirely useless, which is why\naccuracy is not reported as a headline metric anywhere in this document.\n\n3. Problem Definition\n\nThe task is formulated as binary classification over fixed-length windows. For a window ending at ...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q20",
+    "question": "Why does concurrency matter during the resource booking transaction?",
+    "in_scope": true,
+    "expected_evidence": [
+      {
+        "document": "campus_resource_management.pdf",
+        "page": 3
+      }
+    ],
+    "hit_at_1": 1.0,
+    "reciprocal_rank": 1.0,
+    "decision": "proceed",
+    "selected_count": 5,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "campus_resource_management__p003__c0006",
+        "document": "campus_resource_management.pdf",
+        "page": 3,
+        "chunk_index": 6,
+        "score": 0.8679,
+        "above_threshold": true,
+        "is_relevant": true,
+        "text_preview": "5. Resource Booking\n\nBooking is the core transaction and the only part of the system where concurrency genuinely matters. Two users\nattempting to reserve the same laboratory bench for the same hour must produce exactly one successful reservation and one clear rejection, regardless of how closely the...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "campus_resource_management__p004__c0007",
+        "document": "campus_resource_management.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.763,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "5.2 Booking rules\n\nEach resource carries a rule set evaluated in a fixed order. Evaluating them in a defined sequence matters\nbecause the first failing rule determines the error returned to the user, and an unhelpful ordering produces\nmessages that describe a secondary problem while the real obstacl...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "campus_resource_management__p002__c0003",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.7447,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "require approval.\n\n4.\nWhere approval is required, a request enters a pending state and notifies the approver, who may accept or\ndecline with a comment.\n\n5.\nThe system prevents double booking under concurrent load without relying on client-side coordination.\n\n6.\nAdministrators can produce utilisation...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p002__c0004",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.7422,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nDatabase: a relational store holding resources, reservations, users and audit records.\n\n\u00b7\nCache: an in-memory store holding computed availability windows and session material, treated as disposable.\n\n\u00b7\nQueue: a durable job queue for notification delivery and report generation.\n\n3.1 Module boundari...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "campus_resource_management__p004__c0008",
+        "document": "campus_resource_management.pdf",
+        "page": 4,
+        "chunk_index": 8,
+        "score": 0.7309,
+        "above_threshold": true,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nApproval required \u00b7 to the resource owner, immediately.\n\n\u00b7\nRequest approved or declined \u00b7 to the requesting user, immediately.\n\n\u00b7\nUpcoming reservation reminder \u00b7 to the booking user, 24 hours before start.\n\n\u00b7\nCancellation notice \u00b7 to all affected parties, immediately.\n\n6.1 Delivery guarantees\n\nThe...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q21",
+    "question": "What is the capital city of France?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "campus_resource_management__p002__c0004",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.3791,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nDatabase: a relational store holding resources, reservations, users and audit records.\n\n\u00b7\nCache: an in-memory store holding computed availability windows and session material, treated as disposable.\n\n\u00b7\nQueue: a durable job queue for notification delivery and report generation.\n\n3.1 Module boundari...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "campus_resource_management__p005__c0009",
+        "document": "campus_resource_management.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.3785,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "ous surface beyond the health endpoint.\n\n7.1 Endpoints\n\nGET /api/v1/resources?type=room&capacity_min=20\nGET /api/v1/resources/{resource_id}\nGET /api/v1/resources/{resource_id}/availability?date=2026-03-04\n\nPOST /api/v1/reservations\nGET /api/v1/reservations/{reservation_id}\nPATCH /api/v1/reservations...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p002__c0003",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.3702,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "at every opportunity achieves better than 99 percent accuracy while being entirely useless, which is why\naccuracy is not reported as a headline metric anywhere in this document.\n\n3. Problem Definition\n\nThe task is formulated as binary classification over fixed-length windows. For a window ending at ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p001__c0002",
+        "document": "campus_resource_management.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.3616,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "2.1 Functional requirements\n\n1.\nAn authenticated member of the institution can view the availability of any resource they are eligible to\nbook, for any date within the booking window.\n\n2.\nA user can create, amend and cancel their own reservations subject to the resource's notice period and\ncancellat...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p002__c0004",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.3592,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "The gateway is also the natural place to enforce schema. Devices in the field are heterogeneous and are replaced\npiecemeal over years, so a fleet almost always contains several firmware generations at once. Normalising their\noutput at the gateway keeps that variation from propagating into every down...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q22",
+    "question": "How do transformer attention mechanisms calculate dot product self-attention?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p006__c0012",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.6321,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Actual negative\n700\n609,600\n610,300\n\nColumn total\n4,668\n609,992\n614,660\n\nTable 5. Confusion matrix for gradient boosting on the test split, counted per ten-minute window rather than per failure event.\n\nCounting per window overstates the operational burden, because the 700 false positive windows clus...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p005__c0009",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.632,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "6.4 One-dimensional convolutional network\n\nA small network operating on sequences of 24 consecutive windows, comprising three convolutional blocks with\n32, 64 and 64 filters followed by global pooling and a dense classification head. It has access to temporal structure the tabular models do not, but...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p006__c0011",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.6286,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Table 3. Model Comparison on the test set. Illustrative values produced for this report; they do not describe a real experiment.\n\nGradient boosting leads on every metric. The margin over random forest is modest and would need repeated runs\nwith different seeds to be treated as meaningful. The convol...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p001__c0001",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.6143,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Edge Computing for Intelligent IoT Systems\n\nA technical overview of architecture, data handling, network design, security posture and\non-device inference for connected sensing systems.\n\nDocument type\nTechnical overview\n\nRevision\n1.2\n\nStatus\nWorking draft\n\nAudience\nSystems engineers, platform archite...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p005__c0009",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.6089,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "512 KB of RAM, and its working buffers must fit too.\n\n6.1 Model compression\n\nThree techniques dominate. Quantisation converts floating point weights to 8-bit integers, reducing model size\nby roughly a factor of four and often improving inference speed on hardware lacking a floating point unit.\nPruni...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q23",
+    "question": "What are the rules of quantum electrodynamics in particle physics?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p007__c0014",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 7,
+        "chunk_index": 14,
+        "score": 0.5049,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "10. Limitations\n\nThis report describes a constructed illustration, and its limitations should be read as at least as instructive as its\nresults.\n\n\u00b7\nThe dataset is synthetic. Real fleets exhibit sensor drift, mislabelled work orders and failure modes absent\nfrom any simulation.\n\n\u00b7\nSixty-three failure...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "campus_resource_management__p004__c0007",
+        "document": "campus_resource_management.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.5024,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "5.2 Booking rules\n\nEach resource carries a rule set evaluated in a fixed order. Evaluating them in a defined sequence matters\nbecause the first failing rule determines the error returned to the user, and an unhelpful ordering produces\nmessages that describe a secondary problem while the real obstacl...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p001__c0002",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.5016,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "1.1 Why locality matters\n\nThree pressures push computation outward. The first is latency. A control loop that must close within 10 ms\ncannot tolerate a round trip to a regional data centre, which typically costs between 20 ms and 80 ms even under\nfavourable conditions. The second is bandwidth cost. ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p002__c0004",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.4958,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "The gateway is also the natural place to enforce schema. Devices in the field are heterogeneous and are replaced\npiecemeal over years, so a fleet almost always contains several firmware generations at once. Normalising their\noutput at the gateway keeps that variation from propagating into every down...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p005__c0009",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.4913,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "512 KB of RAM, and its working buffers must fit too.\n\n6.1 Model compression\n\nThree techniques dominate. Quantisation converts floating point weights to 8-bit integers, reducing model size\nby roughly a factor of four and often improving inference speed on hardware lacking a floating point unit.\nPruni...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q24",
+    "question": "How do I bake a chocolate sourdough loaf at home?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "campus_resource_management__p002__c0004",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.4055,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nDatabase: a relational store holding resources, reservations, users and audit records.\n\n\u00b7\nCache: an in-memory store holding computed availability windows and session material, treated as disposable.\n\n\u00b7\nQueue: a durable job queue for notification delivery and report generation.\n\n3.1 Module boundari...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "campus_resource_management__p004__c0007",
+        "document": "campus_resource_management.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.4033,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "5.2 Booking rules\n\nEach resource carries a rule set evaluated in a fixed order. Evaluating them in a defined sequence matters\nbecause the first failing rule determines the error returned to the user, and an unhelpful ordering produces\nmessages that describe a secondary problem while the real obstacl...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p005__c0009",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.3976,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "512 KB of RAM, and its working buffers must fit too.\n\n6.1 Model compression\n\nThree techniques dominate. Quantisation converts floating point weights to 8-bit integers, reducing model size\nby roughly a factor of four and often improving inference speed on hardware lacking a floating point unit.\nPruni...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p001__c0002",
+        "document": "campus_resource_management.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.3951,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "2.1 Functional requirements\n\n1.\nAn authenticated member of the institution can view the availability of any resource they are eligible to\nbook, for any date within the booking window.\n\n2.\nA user can create, amend and cancel their own reservations subject to the resource's notice period and\ncancellat...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p004__c0007",
+        "document": "edge_computing_iot.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.3931,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "workarounds.\n\nQuality of service settings deserve explicit thought rather than being left at their defaults. At-most-once delivery\nis acceptable for a high-rate telemetry stream where a lost sample is immaterial. At-least-once delivery is\nappropriate for alerts, provided consumers are idempotent. Ex...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q25",
+    "question": "Who won the 1994 FIFA World Cup final in Pasadena?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p005__c0009",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.4259,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "6.4 One-dimensional convolutional network\n\nA small network operating on sequences of 24 consecutive windows, comprising three convolutional blocks with\n32, 64 and 64 filters followed by global pooling and a dense classification head. It has access to temporal structure the tabular models do not, but...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p006__c0011",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.4043,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Table 3. Model Comparison on the test set. Illustrative values produced for this report; they do not describe a real experiment.\n\nGradient boosting leads on every metric. The margin over random forest is modest and would need repeated runs\nwith different seeds to be treated as meaningful. The convol...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p002__c0003",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.4025,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "at every opportunity achieves better than 99 percent accuracy while being entirely useless, which is why\naccuracy is not reported as a headline metric anywhere in this document.\n\n3. Problem Definition\n\nThe task is formulated as binary classification over fixed-length windows. For a window ending at ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p006__c0010",
+        "document": "campus_resource_management.pdf",
+        "page": 6,
+        "chunk_index": 10,
+        "score": 0.3927,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Code\nMeaning in this API\nClient action\n\n200\nRequest succeeded\nProceed\n\n201\nReservation created\nStore the identifier\n\n400\nMalformed or invalid payload\nCorrect and resend\n\n401\nToken missing, expired or invalid\nRe-authenticate\n\n403\nAuthenticated but not permitted\nDo not retry\n\n404\nResource or reservati...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p008__c0015",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 8,
+        "chunk_index": 15,
+        "score": 0.3916,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Several directions follow naturally. Reformulating the task as remaining useful life regression would give maintenance planners a continuous estimate rather than a binary alert, at the cost of requiring run-to-failure labels.\nExtending the feature set with acoustic measurements may separate failure ...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q26",
+    "question": "What is the formula for calculating Black-Scholes options pricing?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p006__c0012",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 6,
+        "chunk_index": 12,
+        "score": 0.5825,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Actual negative\n700\n609,600\n610,300\n\nColumn total\n4,668\n609,992\n614,660\n\nTable 5. Confusion matrix for gradient boosting on the test split, counted per ten-minute window rather than per failure event.\n\nCounting per window overstates the operational burden, because the 700 false positive windows clus...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p007__c0013",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 7,
+        "chunk_index": 13,
+        "score": 0.5662,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "The second is that the operating threshold is a business parameter wearing technical clothing. Moving it changes\nthe balance between missed failures and unnecessary inspections, and the correct balance depends on the cost of\neach. In a plant where an unplanned stoppage costs two orders of magnitude ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p004__c0007",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.5599,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "3.\nTrend: the ratio of the current window value to the median of the preceding 144 windows, giving a\nper-machine baseline that adapts slowly.\n\n4.\nOperating context: mean RPM, mean current, and a derived load estimate, included so that the model can\ndistinguish genuine anomalies from ordinary load ch...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p002__c0003",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.5597,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "at every opportunity achieves better than 99 percent accuracy while being entirely useless, which is why\naccuracy is not reported as a headline metric anywhere in this document.\n\n3. Problem Definition\n\nThe task is formulated as binary classification over fixed-length windows. For a window ending at ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p005__c0009",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.5552,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "512 KB of RAM, and its working buffers must fit too.\n\n6.1 Model compression\n\nThree techniques dominate. Quantisation converts floating point weights to 8-bit integers, reducing model size\nby roughly a factor of four and often improving inference speed on hardware lacking a floating point unit.\nPruni...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q27",
+    "question": "How do solar panels convert photons to direct current electricity?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "edge_computing_iot__p001__c0002",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.4982,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "1.1 Why locality matters\n\nThree pressures push computation outward. The first is latency. A control loop that must close within 10 ms\ncannot tolerate a round trip to a regional data centre, which typically costs between 20 ms and 80 ms even under\nfavourable conditions. The second is bandwidth cost. ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p002__c0003",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.4919,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "2. Edge Computing Architecture\n\nA workable reference architecture separates concerns into four tiers. Each tier has a characteristic power budget,\na characteristic failure mode and a characteristic unit of work. Designs that blur these boundaries tend to\naccumulate coupling that becomes expensive to...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p001__c0001",
+        "document": "edge_computing_iot.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.4848,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Edge Computing for Intelligent IoT Systems\n\nA technical overview of architecture, data handling, network design, security posture and\non-device inference for connected sensing systems.\n\nDocument type\nTechnical overview\n\nRevision\n1.2\n\nStatus\nWorking draft\n\nAudience\nSystems engineers, platform archite...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "predictive_maintenance_ml__p003__c0005",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 3,
+        "chunk_index": 5,
+        "score": 0.481,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Property\nValue\nNote\n\nMachines\n48\nCentrifugal pumps, 15\u00b775 kW\n\nObservation period\n14 months\nSimulated, continuous\n\nAggregate records\n2,948,160\n10-minute windows\n\nPositive windows\n20,637\n0.70 % of total\n\nRecorded failures\n63\nAcross 29 distinct machines\n\nChannels per machine\n4\nTemperature, vibration, c...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p007__c0014",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 7,
+        "chunk_index": 14,
+        "score": 0.4798,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "10. Limitations\n\nThis report describes a constructed illustration, and its limitations should be read as at least as instructive as its\nresults.\n\n\u00b7\nThe dataset is synthetic. Real fleets exhibit sensor drift, mislabelled work orders and failure modes absent\nfrom any simulation.\n\n\u00b7\nSixty-three failure...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q28",
+    "question": "What are the symptoms and treatments of acute appendicitis?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p008__c0015",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 8,
+        "chunk_index": 15,
+        "score": 0.4758,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Several directions follow naturally. Reformulating the task as remaining useful life regression would give maintenance planners a continuous estimate rather than a binary alert, at the cost of requiring run-to-failure labels.\nExtending the feature set with acoustic measurements may separate failure ...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p001__c0001",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.4753,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Predictive Maintenance Using Machine Learning for\nIndustrial Equipment\n\nAn original, hypothetical study of vibration- and thermal-based fault prediction on rotating\nmachinery. All data and results described here were constructed for illustration and do not\nreport a real experiment.\n\nDocument type\nHy...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p001__c0002",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1,
+        "chunk_index": 2,
+        "score": 0.474,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Maintenance strategies are conventionally divided into three categories. Corrective maintenance repairs equipment after it fails. Preventive maintenance services equipment on a fixed schedule regardless of condition.\nPredictive maintenance attempts to service equipment shortly before it would have f...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p007__c0012",
+        "document": "campus_resource_management.pdf",
+        "page": 7,
+        "chunk_index": 12,
+        "score": 0.4712,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "422 Unprocessable Entity\n{\n\"error\": {\n\"code\": \"NOTICE_PERIOD_NOT_MET\",\n\"message\": \"This resource requires at least 24 hours notice.\",\n\"field\": \"starts_at\"\n}\n}\n\n9.1 Logging\n\nLogs are structured, one JSON object per event, and every request carries a correlation identifier propagated to\nany downstream...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "campus_resource_management__p006__c0011",
+        "document": "campus_resource_management.pdf",
+        "page": 6,
+        "chunk_index": 11,
+        "score": 0.4702,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "audit_entry\nentry_id, actor_id, action, object_id, at\nAppend-only change log\n\nTable 4. Principal tables in the schema. Column lists are indicative rather than complete.\n\n8.2 Indexing\n\nThree indexes carry almost all query load: a GiST index on the reservation period supporting both the exclusion\ncons...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q29",
+    "question": "How does the Linux kernel manage virtual memory page tables?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "campus_resource_management__p002__c0004",
+        "document": "campus_resource_management.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.6632,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "\u00b7\nDatabase: a relational store holding resources, reservations, users and audit records.\n\n\u00b7\nCache: an in-memory store holding computed availability windows and session material, treated as disposable.\n\n\u00b7\nQueue: a durable job queue for notification delivery and report generation.\n\n3.1 Module boundari...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "edge_computing_iot__p002__c0004",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 4,
+        "score": 0.6426,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "The gateway is also the natural place to enforce schema. Devices in the field are heterogeneous and are replaced\npiecemeal over years, so a fleet almost always contains several firmware generations at once. Normalising their\noutput at the gateway keeps that variation from propagating into every down...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "edge_computing_iot__p002__c0003",
+        "document": "edge_computing_iot.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.6267,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "2. Edge Computing Architecture\n\nA workable reference architecture separates concerns into four tiers. Each tier has a characteristic power budget,\na characteristic failure mode and a characteristic unit of work. Designs that blur these boundaries tend to\naccumulate coupling that becomes expensive to...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "campus_resource_management__p001__c0001",
+        "document": "campus_resource_management.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.6195,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Design and Implementation Guide for a Campus\nResource Management Platform\n\nEngineering documentation covering requirements, service architecture, identity, booking logic,\nnotifications, API surface, persistence, error handling, testing and deployment.\n\nDocument type\nEngineering design guide\n\nVersion...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "edge_computing_iot__p005__c0009",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.6088,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "512 KB of RAM, and its working buffers must fit too.\n\n6.1 Model compression\n\nThree techniques dominate. Quantisation converts floating point weights to 8-bit integers, reducing model size\nby roughly a factor of four and often improving inference speed on hardware lacking a floating point unit.\nPruni...",
+        "text_truncated": true
+      }
+    ]
+  },
+  {
+    "question_id": "q30",
+    "question": "What is the historical origin of Renaissance oil painting techniques?",
+    "in_scope": false,
+    "expected_evidence": [],
+    "hit_at_1": 0.0,
+    "reciprocal_rank": 0.0,
+    "decision": "abstain",
+    "selected_count": 0,
+    "retrieved_candidates": [
+      {
+        "rank": 1,
+        "chunk_id": "predictive_maintenance_ml__p004__c0007",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 4,
+        "chunk_index": 7,
+        "score": 0.4767,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "3.\nTrend: the ratio of the current window value to the median of the preceding 144 windows, giving a\nper-machine baseline that adapts slowly.\n\n4.\nOperating context: mean RPM, mean current, and a derived load estimate, included so that the model can\ndistinguish genuine anomalies from ordinary load ch...",
+        "text_truncated": true
+      },
+      {
+        "rank": 2,
+        "chunk_id": "predictive_maintenance_ml__p001__c0001",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 1,
+        "chunk_index": 1,
+        "score": 0.4624,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "Predictive Maintenance Using Machine Learning for\nIndustrial Equipment\n\nAn original, hypothetical study of vibration- and thermal-based fault prediction on rotating\nmachinery. All data and results described here were constructed for illustration and do not\nreport a real experiment.\n\nDocument type\nHy...",
+        "text_truncated": true
+      },
+      {
+        "rank": 3,
+        "chunk_id": "predictive_maintenance_ml__p005__c0009",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.4496,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "6.4 One-dimensional convolutional network\n\nA small network operating on sequences of 24 consecutive windows, comprising three convolutional blocks with\n32, 64 and 64 filters followed by global pooling and a dense classification head. It has access to temporal structure the tabular models do not, but...",
+        "text_truncated": true
+      },
+      {
+        "rank": 4,
+        "chunk_id": "edge_computing_iot__p005__c0009",
+        "document": "edge_computing_iot.pdf",
+        "page": 5,
+        "chunk_index": 9,
+        "score": 0.4467,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "512 KB of RAM, and its working buffers must fit too.\n\n6.1 Model compression\n\nThree techniques dominate. Quantisation converts floating point weights to 8-bit integers, reducing model size\nby roughly a factor of four and often improving inference speed on hardware lacking a floating point unit.\nPruni...",
+        "text_truncated": true
+      },
+      {
+        "rank": 5,
+        "chunk_id": "predictive_maintenance_ml__p002__c0003",
+        "document": "predictive_maintenance_ml.pdf",
+        "page": 2,
+        "chunk_index": 3,
+        "score": 0.4421,
+        "above_threshold": false,
+        "is_relevant": false,
+        "text_preview": "at every opportunity achieves better than 99 percent accuracy while being entirely useless, which is why\naccuracy is not reported as a headline metric anywhere in this document.\n\n3. Problem Definition\n\nThe task is formulated as binary classification over fixed-length windows. For a window ending at ...",
+        "text_truncated": true
+      }
+    ]
+  }
+]

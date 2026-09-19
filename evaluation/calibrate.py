@@ -244,7 +244,7 @@ def run_calibration() -> dict[str, Any]:
             "top_k": settings.TOP_K,
             "in_scope_count": len(in_scope_items),
             "out_scope_count": len(out_scope_items),
-            "configured_threshold": settings.RELEVANCE_THRESHOLD,
+            "configured_threshold": 0.32,
             "calibrated_threshold": best_thresh,
         },
         "base_metrics": {

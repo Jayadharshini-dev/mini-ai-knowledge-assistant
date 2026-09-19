@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "dataset_file": "evaluation/dataset.yaml",
+    "in_scope_count": 20,
+    "out_scope_count": 10,
+    "total_questions": 30,
+    "eval_k": 5
+  },
+  "experiments": {
+    "production_baseline": {
+      "name": "Production Baseline",
+      "description": "Production calibrated configuration using L2-normalized BGE embeddings, IndexFlatIP, TOP_K=4, threshold=0.67",
+      "configuration": {
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "normalized_embeddings": true,
+        "index_type": "IndexFlatIP",
+        "top_k": 4,
+        "eval_k": 5,
+        "threshold": 0.67
+      },
+      "metrics": {
+        "hit_at_1": 0.8,
+        "hit_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.8833,
+        "gating_applicable": true,
+        "gating_metrics": {
+          "in_scope_coverage": 0.9,
+          "out_scope_abstention_rate": 1.0,
+          "true_positives": 18,
+          "false_negatives": 2,
+          "true_negatives": 10,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.9,
+          "gate_f1_score": 0.9474
+        }
+      }
+    },
+    "unnormalized_embeddings_ablation": {
+      "name": "Unnormalized Embedding Ablation",
+      "description": "Ablation using unnormalized BGE vectors on an in-memory IndexFlatIP; raw inner product scores; gating not applicable",
+      "configuration": {
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "normalized_embeddings": false,
+        "index_type": "IndexFlatIP(384)",
+        "top_k": 4,
+        "eval_k": 5,
+        "threshold": null
+      },
+      "metrics": {
+        "hit_at_1": 0.8,
+        "hit_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.8833,
+        "observed_raw_score_range": {
+          "min_score": 0.3592,
+          "max_score": 0.8679
+        },
+        "gating_applicable": false,
+        "gating_metrics": null
+      }
+    },
+    "pre_calibration_threshold_comparison": {
+      "name": "Pre-calibration Threshold Comparison",
+      "description": "Gating threshold comparison using production baseline candidates with pre-calibration threshold=0.32",
+      "configuration": {
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "normalized_embeddings": true,
+        "index_type": "IndexFlatIP",
+        "top_k": 4,
+        "eval_k": 5,
+        "threshold": 0.32
+      },
+      "metrics": {
+        "hit_at_1": 0.8,
+        "hit_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.8833,
+        "comparison_type": "gating_calibration",
+        "shares_retrieval_with": "production_baseline",
+        "gating_applicable": true,
+        "gating_metrics": {
+          "in_scope_coverage": 1.0,
+          "out_scope_abstention_rate": 0.0,
+          "true_positives": 20,
+          "false_negatives": 0,
+          "true_negatives": 0,
+          "false_positives": 10,
+          "precision": 0.6667,
+          "recall": 1.0,
+          "gate_f1_score": 0.8
+        }
+      }
+    }
+  },
+  "phase03_preservation": {
+    "calibration_sha256": "c1b1d00a8826bb2c70d637eb9fdc4845104a106292a3b084daa3d3c8c50b155d",
+    "configured_threshold": 0.32,
+    "calibrated_threshold": 0.67,
+    "base_metrics": {
+      "hit_at_1": 0.8,
+      "hit_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.8833
+    },
+    "phase09_baseline_metrics": {
+      "hit_at_1": 0.8,
+      "hit_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.8833
+    },
+    "metrics_match": true,
+    "calibration_file_rewritten": false
+  },
+  "reproducibility": {
+    "production_index_rebuilt": true,
+    "rebuild_note": "Production index was rebuilt during implementation verification before the final experiment run.",
+    "expected_calibration_git_diff": "clean",
+    "application_settings_unmutated": true,
+    "global_top_k": 4,
+    "global_relevance_threshold": 0.67
+  }
+}
