@@ -5,7 +5,7 @@ import { ChatScreen } from "./components/screens/ChatScreen";
 import { TraceScreen } from "./components/screens/TraceScreen";
 import type { DocumentRecord, KnowledgeBaseStatus } from "./types/api";
 import { getDocuments, getKnowledgeBaseStatus } from "./services/api";
-import { Sparkles } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>("chat");
@@ -38,7 +38,7 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50/60 text-slate-900 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans">
       {/* Subtle Application Shell Header */}
       <Header
         activeTab={activeTab}
@@ -48,10 +48,10 @@ export const App: React.FC = () => {
       />
 
       {/* Main Content Viewport */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col">
         {isLoading && !kbStatus && isBackendConnected ? (
           <div className="py-20 text-center my-auto">
-            <div className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-indigo-600 border-t-transparent" />
+            <div className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-slate-700 border-t-transparent" />
             <p className="mt-3 text-xs font-medium text-slate-500">
               Connecting to Assistant...
             </p>
@@ -59,7 +59,11 @@ export const App: React.FC = () => {
         ) : (
           <>
             {activeTab === "chat" && (
-              <ChatScreen status={kbStatus} onNavigateToDocs={() => setActiveTab("kb")} />
+              <ChatScreen
+                status={kbStatus}
+                documents={documents}
+                onNavigateToDocs={() => setActiveTab("kb")}
+              />
             )}
 
             {activeTab === "kb" && (
@@ -75,17 +79,17 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      {/* Clean Footer */}
-      <footer className="border-t border-slate-200/80 bg-white py-4 text-xs text-slate-500">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-            <span className="font-medium text-slate-700">Mini AKA</span>
+      {/* Clean Editorial Footer */}
+      <footer className="border-t border-slate-200 bg-white py-3.5 text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <div className="flex items-center gap-2 text-slate-600">
+            <BookOpen className="w-3.5 h-3.5 text-slate-700" />
+            <span className="font-semibold text-slate-800">Mini AKA</span>
             <span>•</span>
-            <span>Grounded AI Document Assistant</span>
+            <span className="text-slate-500">Grounded Document Assistant</span>
           </div>
-          <div className="text-[11px] text-slate-400">
-            {isBackendConnected ? "Connected" : "Disconnected"}
+          <div className="text-[11px] text-slate-400 font-mono">
+            {isBackendConnected ? "Status: Connected" : "Status: Offline"}
           </div>
         </div>
       </footer>
