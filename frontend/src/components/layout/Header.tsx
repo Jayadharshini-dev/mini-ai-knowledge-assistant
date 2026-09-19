@@ -8,6 +8,7 @@ interface HeaderProps {
   setActiveTab: (tab: ActiveTab) => void;
   kbState: "ready" | "empty" | "indexing" | "error";
   isBackendConnected: boolean;
+  traceCount?: number;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -15,6 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
   setActiveTab,
   kbState,
   isBackendConnected,
+  traceCount = 0,
 }) => {
   return (
     <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
@@ -71,8 +73,14 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Activity className="w-3.5 h-3.5 text-slate-500" />
               <span className="hidden sm:inline">Trace</span>
+              {traceCount > 0 && (
+                <span className="ml-1 px-1.5 py-0.2 bg-slate-200 text-slate-800 text-[10px] rounded-full font-mono font-medium">
+                  {traceCount}
+                </span>
+              )}
             </button>
           </nav>
+
 
           {/* Simple Connectivity & KB Status */}
           <div className="flex items-center gap-2 text-xs text-slate-500">

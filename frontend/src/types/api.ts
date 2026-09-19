@@ -95,3 +95,18 @@ export interface ApiError {
   message: string;
   retryable?: boolean;
 }
+
+export interface InquiryResult {
+  question: string;
+  answer: string | null;
+  citations: Citation[];
+  chunks: RetrievedChunk[];
+  isAbstained: boolean;
+  isDegraded: boolean;
+  degradedReason?: string | null;
+  abstainMessage?: string;
+  traceEvents: TraceEvent[];
+  elapsedMs?: number;
+  error?: ApiError;
+}
+

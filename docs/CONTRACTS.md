@@ -126,7 +126,7 @@ Only non-empty payloads are listed. Every other type carries `detail: {}`.
 }
 ```
 
-### ABSTAINED (terminal)
+### ABSTAINED
 ```json
 {
   "reason": "no_passage_above_threshold",
@@ -152,9 +152,9 @@ Only non-empty payloads are listed. Every other type carries `detail: {}`.
 { "citations_emitted": 3, "citations_dropped": 0, "provider_ms": 1847 }
 ```
 
-### GENERATION_SKIPPED (terminal)
+### GENERATION_SKIPPED
 ```json
-{ "reason": "no_provider_configured", "mode": "evidence_only" }
+{ "reason": "no_provider_configured", "status": "degraded", "mode": "evidence_only" }
 ```
 
 ### COMPLETE (terminal)
@@ -164,7 +164,9 @@ Only non-empty payloads are listed. Every other type carries `detail: {}`.
   "citations": [ /* Citation[] */ ],
   "chunks": [ /* RetrievedChunk[] */ ],
   "elapsed_ms": 2810,
-  "timings": { "embed_ms": 41, "search_ms": 3, "context_ms": 8, "generate_ms": 1847 }
+  "abstained": false,
+  "degraded": null,
+  "timings": { "search_ms": 3, "context_ms": 8, "generate_ms": 1847 }
 }
 ```
 

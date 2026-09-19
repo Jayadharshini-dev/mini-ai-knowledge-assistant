@@ -3,7 +3,8 @@ import { Header, type ActiveTab } from "./components/layout/Header";
 import { KnowledgeBaseScreen } from "./components/screens/KnowledgeBaseScreen";
 import { ChatScreen } from "./components/screens/ChatScreen";
 import { TraceScreen } from "./components/screens/TraceScreen";
-import type { DocumentRecord, KnowledgeBaseStatus } from "./types/api";
+import type { DocumentRecord, InquiryResult, KnowledgeBaseStatus } from "./types/api";
+import type { TraceEvent } from "./types/events";
 import { getDocuments, getKnowledgeBaseStatus } from "./services/api";
 import { BookOpen } from "lucide-react";
 
@@ -13,6 +14,8 @@ export const App: React.FC = () => {
   const [documents, setDocuments] = useState<DocumentRecord[]>([]);
   const [isBackendConnected, setIsBackendConnected] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [traceEvents, setTraceEvents] = useState<TraceEvent[]>([]);
+  const [inquiryResult, setInquiryResult] = useState<InquiryResult | null>(null);
 
   const fetchBackendData = async () => {
     setIsLoading(true);
@@ -45,6 +48,7 @@ export const App: React.FC = () => {
         setActiveTab={setActiveTab}
         kbState={kbStatus?.state ?? "empty"}
         isBackendConnected={isBackendConnected}
+        traceCount={traceEvents.length}
       />
 
       {/* Main Content Viewport */}
@@ -62,6 +66,10 @@ export const App: React.FC = () => {
               <ChatScreen
                 status={kbStatus}
                 documents={documents}
+                traceEvents={traceEvents}
+                setTraceEvents={setTraceEvents}
+                inquiryResult={inquiryResult}
+                setInquiryResult={setInquiryResult}
                 onNavigateToDocs={() => setActiveTab("kb")}
               />
             )}
@@ -74,10 +82,16 @@ export const App: React.FC = () => {
               />
             )}
 
-            {activeTab === "trace" && <TraceScreen />}
+            {activeTab === "trace" && (
+              <TraceScreen
+                traceEvents={traceEvents}
+                inquiryResult={inquiryResult}
+              />
+            )}
           </>
         )}
       </main>
+
 
       {/* Clean Editorial Footer */}
       <footer className="border-t border-slate-200 bg-white py-3.5 text-xs text-slate-500">
