@@ -38,10 +38,12 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Functional Navigation Tabs */}
-          <nav className="flex items-center gap-1 sm:gap-1.5">
+          <nav className="flex items-center gap-1 sm:gap-1.5" aria-label="Main Navigation">
             <button
               onClick={() => setActiveTab("chat")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              aria-current={activeTab === "chat" ? "page" : undefined}
+              aria-label="Inquiry Screen"
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none ${
                 activeTab === "chat"
                   ? "bg-slate-100 text-slate-900 font-semibold"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
@@ -53,7 +55,9 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab("kb")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              aria-current={activeTab === "kb" ? "page" : undefined}
+              aria-label="Document Library Screen"
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none ${
                 activeTab === "kb"
                   ? "bg-slate-100 text-slate-900 font-semibold"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
@@ -65,7 +69,9 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setActiveTab("trace")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              aria-current={activeTab === "trace" ? "page" : undefined}
+              aria-label={`Trace Screen ${traceCount > 0 ? `(${traceCount} events)` : ""}`}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none ${
                 activeTab === "trace"
                   ? "bg-slate-100 text-slate-900 font-semibold"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"

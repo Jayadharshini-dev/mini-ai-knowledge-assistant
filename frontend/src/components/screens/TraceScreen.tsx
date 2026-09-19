@@ -107,7 +107,11 @@ export const TraceScreen: React.FC<TraceScreenProps> = ({
           )}
 
           {/* Trace Event Timeline */}
-          <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xs">
+          <div
+            role="region"
+            aria-label="Retrieval Trace Timeline"
+            className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xs"
+          >
             <div className="px-4 py-3 bg-slate-50/70 border-b border-slate-200 flex items-center justify-between text-[11px] font-semibold text-slate-500 uppercase tracking-wider font-mono">
               <div className="flex items-center gap-6">
                 <span>Seq</span>
@@ -123,14 +127,25 @@ export const TraceScreen: React.FC<TraceScreenProps> = ({
               {traceEvents.map((evt) => {
                 const isExpanded = expandedSeq === evt.seq;
                 const detailKeys = Object.keys(evt.detail || {});
+                const isExpandable = detailKeys.length > 0;
 
                 return (
                   <div key={evt.seq} className="hover:bg-slate-50/50 transition-colors">
                     <div
-                      onClick={() => detailKeys.length > 0 && toggleExpand(evt.seq)}
-                      className={`px-4 py-3 flex items-center justify-between cursor-pointer ${
-                        isExpanded ? "bg-slate-50/80" : ""
-                      }`}
+                      tabIndex={isExpandable ? 0 : undefined}
+                      role={isExpandable ? "button" : undefined}
+                      aria-expanded={isExpandable ? isExpanded : undefined}
+                      aria-label={isExpandable ? `Trace step ${evt.seq} ${evt.type}: ${evt.label}. Click or press Enter to ${isExpanded ? "collapse" : "expand"} details.` : undefined}
+                      onClick={() => isExpandable && toggleExpand(evt.seq)}
+                      onKeyDown={(e) => {
+                        if (isExpandable && (e.key === "Enter" || e.key === " ")) {
+                          e.preventDefault();
+                          toggleExpand(evt.seq);
+                        }
+                      }}
+                      className={`px-4 py-3 flex items-center justify-between ${
+                        isExpandable ? "cursor-pointer focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none" : ""
+                      } ${isExpanded ? "bg-slate-50/80" : ""}`}
                     >
                       <div className="flex items-center gap-4 min-w-0">
                         <span className="font-mono text-slate-400 text-[11px] w-6">

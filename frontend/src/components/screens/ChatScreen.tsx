@@ -29,6 +29,7 @@ interface ChatScreenProps {
   inquiryResult: InquiryResult | null;
   setInquiryResult: React.Dispatch<React.SetStateAction<InquiryResult | null>>;
   onNavigateToDocs?: () => void;
+  isBackendConnected?: boolean;
 }
 
 export const ChatScreen: React.FC<ChatScreenProps> = ({
@@ -38,6 +39,7 @@ export const ChatScreen: React.FC<ChatScreenProps> = ({
   inquiryResult,
   setInquiryResult,
   onNavigateToDocs,
+  isBackendConnected = true,
 }) => {
   const [questionInput, setQuestionInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -114,30 +116,43 @@ export const ChatScreen: React.FC<ChatScreenProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 flex-1 items-start">
         {/* Main Conversation Column (3 Cols on Desktop) */}
         <div className="lg:col-span-3 flex flex-col justify-between h-full min-h-[calc(100vh-12rem)] space-y-6">
-          {/* Empty Document Library Alert Notice */}
-          {!isKbReady && (
-            <div className="bg-slate-100/90 border border-slate-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-700">
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
-                  <Upload className="w-3.5 h-3.5" />
-                </div>
-                <div>
-                  <span className="font-semibold text-slate-900">Document library is empty</span>
-                  <p className="text-slate-500 text-[11px] mt-0.5">
-                    Upload PDF documents in the Library to enable grounded answers.
-                  </p>
-                </div>
+          {/* Backend Connection Offline Alert Notice */}
+          {!isBackendConnected ? (
+            <div className="bg-rose-50 border border-rose-200 rounded-xl p-4 flex items-center gap-3 text-xs text-rose-800">
+              <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+              <div>
+                <span className="font-semibold">Backend Connection Offline</span>
+                <p className="text-rose-700 text-[11px] mt-0.5">
+                  Unable to connect to assistant server. Please ensure the backend process is running on port 8000.
+                </p>
               </div>
-              {onNavigateToDocs && (
-                <button
-                  onClick={onNavigateToDocs}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:text-indigo-600 shrink-0"
-                >
-                  <span>Go to Library</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
-              )}
             </div>
+          ) : (
+            /* Empty Document Library Alert Notice */
+            !isKbReady && (
+              <div className="bg-slate-100/90 border border-slate-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-700">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                    <Upload className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-slate-900">Document library is empty</span>
+                    <p className="text-slate-500 text-[11px] mt-0.5">
+                      Upload PDF documents in the Library to enable grounded answers.
+                    </p>
+                  </div>
+                </div>
+                {onNavigateToDocs && (
+                  <button
+                    onClick={onNavigateToDocs}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:text-indigo-600 shrink-0 focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none rounded"
+                  >
+                    <span>Go to Library</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+            )
           )}
 
           {/* Welcome / Initial Empty Conversation View */}
@@ -198,10 +213,22 @@ export const ChatScreen: React.FC<ChatScreenProps> = ({
 
               {/* Error Alert */}
               {inquiryResult.error && (
-                <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5 space-y-2">
-                  <div className="flex items-center gap-2 text-rose-800 font-semibold text-xs">
-                    <AlertCircle className="w-4 h-4 shrink-0" />
-                    <span>Inquiry Error ({inquiryResult.error.code})</span>
+                <div className="bg-rose-50 border border-rose-200 rounded-2xl p-5 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-rose-800 font-semibold text-xs">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>Inquiry Error ({inquiryResult.error.code})</span>
+                    </div>
+                    {inquiryResult.error.retryable && (
+                      <button
+                        onClick={() => handleSubmit()}
+                        disabled={isSubmitting || !isBackendConnected}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-rose-700 hover:bg-rose-800 text-white rounded-lg text-xs font-medium shadow-2xs transition-colors focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none disabled:opacity-50"
+                      >
+                        <RotateCcw className="w-3 h-3" />
+                        <span>Retry Inquiry</span>
+                      </button>
+                    )}
                   </div>
                   <p className="text-xs text-rose-700 leading-relaxed">
                     {inquiryResult.error.message}
@@ -373,7 +400,11 @@ export const ChatScreen: React.FC<ChatScreenProps> = ({
               onSubmit={handleSubmit}
               className="relative bg-white border border-slate-200 rounded-2xl shadow-xs focus-within:border-slate-400 focus-within:shadow-sm transition-all p-2.5"
             >
+              <label htmlFor="chat-inquiry-input" className="sr-only">
+                Ask a question about your documents
+              </label>
               <textarea
+                id="chat-inquiry-input"
                 rows={2}
                 value={questionInput}
                 onChange={(e) => setQuestionInput(e.target.value)}
@@ -384,11 +415,13 @@ export const ChatScreen: React.FC<ChatScreenProps> = ({
                   }
                 }}
                 placeholder={
-                  isKbReady
+                  !isBackendConnected
+                    ? "Backend offline. Reconnect server to ask questions..."
+                    : isKbReady
                     ? "Ask a question about your documents..."
                     : "Upload documents to start asking questions..."
                 }
-                disabled={!isKbReady || isSubmitting}
+                disabled={!isBackendConnected || !isKbReady || isSubmitting}
                 className="w-full resize-none bg-transparent px-3 py-1.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <div className="flex items-center justify-between pt-2 px-2 border-t border-slate-100">
@@ -398,8 +431,9 @@ export const ChatScreen: React.FC<ChatScreenProps> = ({
                 </span>
                 <button
                   type="submit"
-                  disabled={!isKbReady || !questionInput.trim() || isSubmitting}
-                  className="w-8 h-8 rounded-xl bg-slate-900 text-white flex items-center justify-center hover:bg-slate-800 disabled:opacity-30 disabled:hover:bg-slate-900 transition-colors shadow-xs"
+                  aria-label="Submit Question"
+                  disabled={!isBackendConnected || !isKbReady || !questionInput.trim() || isSubmitting}
+                  className="w-8 h-8 rounded-xl bg-slate-900 text-white flex items-center justify-center hover:bg-slate-800 disabled:opacity-30 disabled:hover:bg-slate-900 transition-colors shadow-xs focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
                 >
                   <Send className="w-3.5 h-3.5" />
                 </button>

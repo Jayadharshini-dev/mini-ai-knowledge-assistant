@@ -28,6 +28,19 @@ export async function getDocuments(): Promise<{ documents: DocumentRecord[] }> {
   return response.json();
 }
 
+export function sanitizeErrorMessage(msg: string): string {
+  if (!msg) return "An unexpected error occurred.";
+  if (
+    msg.includes("Traceback (most recent call last)") ||
+    msg.includes("File \"") ||
+    msg.includes(".py:") ||
+    msg.includes("fitz.fitz.")
+  ) {
+    return "An internal server error occurred while processing the request.";
+  }
+  return msg;
+}
+
 export async function uploadDocument(
   file: File,
   onEvent: (event: TraceEvent) => void,
@@ -44,7 +57,8 @@ export async function uploadDocument(
 
     if (!response.ok) {
       const errData = await response.json().catch(() => ({}));
-      throw new Error(errData.message || `Upload failed with status ${response.status}`);
+      const rawMsg = errData.message || `Upload failed with status ${response.status}`;
+      throw new Error(sanitizeErrorMessage(rawMsg));
     }
 
     if (!response.body) {
@@ -133,9 +147,10 @@ export async function streamChat(
 
     if (!response.ok) {
       const errData = await response.json().catch(() => ({}));
+      const rawMsg = errData.message || `Request failed with status ${response.status}`;
       onError({
         code: errData.code || "HTTP_ERROR",
-        message: errData.message || `Request failed with status ${response.status}`,
+        message: sanitizeErrorMessage(rawMsg),
         retryable: response.status >= 500,
       });
       return;
@@ -174,7 +189,7 @@ export async function streamChat(
             receivedTerminalEvent = true;
             onError({
               code: errPayload.code || "INTERNAL_ERROR",
-              message: errPayload.message || "Streaming server error occurred.",
+              message: sanitizeErrorMessage(errPayload.message || "Streaming server error occurred."),
               retryable: errPayload.retryable ?? false,
             });
           } catch {
@@ -210,7 +225,7 @@ export async function streamChat(
               const errDetail = traceEvent.detail as ErrorDetail;
               onError({
                 code: errDetail.code || "PIPELINE_ERROR",
-                message: errDetail.message || "An error occurred during query execution.",
+                message: sanitizeErrorMessage(errDetail.message || "An error occurred during query execution."),
                 retryable: errDetail.retryable,
               });
             }

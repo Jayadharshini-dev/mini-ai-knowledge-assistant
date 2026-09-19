@@ -71,6 +71,7 @@ export const App: React.FC = () => {
                 inquiryResult={inquiryResult}
                 setInquiryResult={setInquiryResult}
                 onNavigateToDocs={() => setActiveTab("kb")}
+                isBackendConnected={isBackendConnected}
               />
             )}
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Upload, FileText, AlertCircle, Library, Plus } from "lucide-react";
 import type { DocumentRecord, KnowledgeBaseStatus } from "../../types/api";
 import type { TraceEvent } from "../../types/events";
@@ -19,6 +19,16 @@ export const KnowledgeBaseScreen: React.FC<KnowledgeBaseScreenProps> = ({
   const [uploadEvents, setUploadEvents] = useState<TraceEvent[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && showUploadModal && !isUploading) {
+        setShowUploadModal(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showUploadModal, isUploading]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -72,7 +82,7 @@ export const KnowledgeBaseScreen: React.FC<KnowledgeBaseScreenProps> = ({
 
         <button
           onClick={() => setShowUploadModal(true)}
-          className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium px-4 py-2.5 rounded-xl shadow-xs transition-colors"
+          className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium px-4 py-2.5 rounded-xl shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
         >
           <Plus className="w-4 h-4" />
           <span>Upload Document</span>
@@ -81,14 +91,19 @@ export const KnowledgeBaseScreen: React.FC<KnowledgeBaseScreenProps> = ({
 
       {/* Upload Modal / Area */}
       {showUploadModal && (
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="upload-modal-title"
+          className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4"
+        >
           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-            <h3 className="text-sm font-semibold text-slate-900">
+            <h3 id="upload-modal-title" className="text-sm font-semibold text-slate-900">
               Upload PDF Document
             </h3>
             <button
               onClick={() => setShowUploadModal(false)}
-              className="text-xs text-slate-400 hover:text-slate-600 font-medium"
+              className="text-xs text-slate-400 hover:text-slate-600 font-medium focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none rounded"
             >
               Cancel
             </button>
