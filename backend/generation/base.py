@@ -17,6 +17,7 @@ class GenerationContext(BaseModel):
     passages_count: int
     context_chars: int
     token_estimate: int
+    truncated: bool = False
 
 
 class RawGenerationResult(BaseModel):

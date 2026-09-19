@@ -26,4 +26,5 @@ def build_generation_context(
         passages_count=len(selected_chunks),
         context_chars=context_chars,
         token_estimate=token_estimate,
+        truncated=False,
     )

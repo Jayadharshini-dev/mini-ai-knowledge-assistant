@@ -1,11 +1,12 @@
-from __future__ import annotations
-
+import logging
 import time
 from typing import Optional
 
 from backend.app.config import settings
 from backend.app.errors import ErrorCode
 from backend.generation.base import GenerationContext, LLMProvider, RawGenerationResult
+
+logger = logging.getLogger(__name__)
 
 
 class GeminiLLMProvider(LLMProvider):
@@ -114,6 +115,7 @@ class GeminiLLMProvider(LLMProvider):
             )
         except Exception as exc:
             elapsed_ms = int((time.perf_counter() - start_time) * 1000)
+            logger.exception("Gemini API request failed")
             exc_str = str(exc).lower()
 
             if "401" in exc_str or "auth" in exc_str or "key" in exc_str:
@@ -129,6 +131,6 @@ class GeminiLLMProvider(LLMProvider):
                 model=self.model_name,
                 status="failed",
                 error_code=err_code,
-                error_message=f"Gemini API request failed: {exc}",
+                error_message="Gemini API request failed.",
                 elapsed_ms=elapsed_ms,
             )

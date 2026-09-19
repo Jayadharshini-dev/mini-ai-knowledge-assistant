@@ -1,12 +1,12 @@
 # CONTRACTS.md
 The single source of truth for the boundary between the Python backend and the TypeScript frontend of the Mini AI Knowledge Assistant. Nothing crosses the HTTP boundary that is not described here.
 
-STATUS: skeleton — authored before implementation, frozen at the end of Phase 05.
+STATUS: frozen — Phase 05 completed.
 
 ## Rules
 1. Nothing crosses the HTTP boundary that is not described here.
-2. After Phase 05 this file changes only by explicit decision, and any change requires updating `backend/app/rag/events.py`, `frontend/src/types/events.ts` and the drift test in the same commit.
-3. TODO(P05) markers below are filled in with real shapes during Phase 05, then the file is frozen.
+2. After Phase 05 this file changes only by explicit decision, and any change requires updating `backend/rag/events.py`, `frontend/src/types/events.ts` and the drift test in the same commit.
+3. Event shapes and error taxonomy are frozen as of Phase 05.
 
 ---
 
@@ -25,15 +25,14 @@ Every server-sent event on every stream uses the same envelope. Only `detail` va
 ```
 
 ```python
-# backend/app/models.py
-@dataclass(frozen=True)
-class TraceEvent:
+# backend/rag/events.py
+class TraceEvent(BaseModel):
     seq: int
     type: EventType
     status: Literal["active", "ok", "warn", "error"]
     t_ms: int
     label: str
-    detail: dict
+    detail: dict[str, Any] = Field(default_factory=dict)
 ```
 
 ```typescript
@@ -60,18 +59,24 @@ The enum is closed. Adding a member is a contract change.
 | TYPE | EMITTED WHEN | TERMINAL? |
 | --- | --- | --- |
 | `QUERY_RECEIVED` | request accepted, before any work | no |
-| `EMBEDDING_STARTED` | immediately before embed_query | no |
-| `EMBEDDING_COMPLETED` | after the query vector exists | no |
-| `RETRIEVAL_STARTED` | immediately before index.search | no |
-| `RETRIEVAL_COMPLETED` | after FAISS returns | no |
+| `RETRIEVAL_STARTED` | immediately before dense retrieval (embedding + search) | no |
+| `RETRIEVAL_COMPLETED` | after FAISS search returns retrieved candidates | no |
 | `EVIDENCE_SELECTED` | after the relevance gate decides | no |
-| `ABSTAINED` | gate decided no passage clears the threshold | **yes** |
+| `ABSTAINED` | gate decided no passage clears the threshold | no |
 | `CONTEXT_BUILT` | numbered context assembled | no |
 | `GENERATION_STARTED` | immediately before the provider call | no |
 | `GENERATION_COMPLETED` | provider returned and citations validated | no |
-| `GENERATION_SKIPPED` | no provider configured — evidence-only mode | **yes** |
-| `COMPLETE` | final event, carries the answer payload | **yes** |
+| `GENERATION_SKIPPED` | no provider configured / provider degraded | no |
+| `COMPLETE` | final event, carries the answer/outcome payload | **yes** |
 | `ERROR` | any typed failure | **yes** |
+
+Terminal Event Invariant. Every query stream run ends with exactly one terminal event: `COMPLETE` for successful, abstained, or degraded outcomes, or `ERROR` for unhandled failures. `ABSTAINED` and `GENERATION_SKIPPED` are non-terminal informational events followed by `COMPLETE`.
+
+Pipeline Execution Rules:
+1. Per-Run EventEmitter: `EventEmitter` is instantiated locally inside `run()` to guarantee independent `seq` and `t_ms` streams for concurrent runs.
+2. Non-Blocking Execution: All blocking operations (`retriever.retrieve`, `provider.generate`) use `await asyncio.to_thread(...)`. Query embedding is encapsulated inside `DenseRetriever.retrieve()`.
+3. Threshold Injection: Calibrated threshold is bound at instantiation via `functools.partial(evaluate_relevance, threshold=settings.RELEVANCE_THRESHOLD)`. `RagPipeline` remains setting-independent.
+4. Pure JSON Serializability: Every detail dictionary contains pure Python primitives (float, int, str, bool, list, dict) and passes `json.dumps(event.to_dict())` without custom encoders.
 
 ### Ingestion stream — `POST /api/documents`
 
@@ -96,12 +101,7 @@ Only non-empty payloads are listed. Every other type carries `detail: {}`.
 
 ### QUERY_RECEIVED
 ```json
-{ "question": "string", "index_size": 1284, "top_k": 4 }
-```
-
-### EMBEDDING_COMPLETED
-```json
-{ "model": "BAAI/bge-small-en-v1.5", "dim": 384, "normalized": true }
+{ "question": "string", "index_size": 1284 }
 ```
 
 ### RETRIEVAL_COMPLETED
@@ -117,7 +117,7 @@ Only non-empty payloads are listed. Every other type carries `detail: {}`.
 ### EVIDENCE_SELECTED
 ```json
 {
-  "threshold": 0.32,
+  "threshold": 0.67,
   "metric": "cosine",
   "top_score": 0.81,
   "selected": 3,
@@ -130,7 +130,7 @@ Only non-empty payloads are listed. Every other type carries `detail: {}`.
 ```json
 {
   "reason": "no_passage_above_threshold",
-  "threshold": 0.32,
+  "threshold": 0.67,
   "top_score": 0.11,
   "message": "The knowledge base does not contain information relevant to this question.",
   "chunks": [ /* sub-threshold RetrievedChunk[] */ ]
@@ -257,7 +257,7 @@ Required response headers: `Content-Type: text/event-stream`, `Cache-Control: no
   "llm_model": "gemini-2.5-flash",
   "llm_available": true,
   "top_k": 4,
-  "relevance_threshold": 0.32,
+  "relevance_threshold": 0.67,
   "retriever": "dense"
 }
 ```
@@ -296,6 +296,7 @@ Required response headers: `Content-Type: text/event-stream`, `Cache-Control: no
 | `PROVIDER_UNAVAILABLE` | network / 5xx / timeout | ERROR event |
 | `PROVIDER_RATE_LIMITED` | 429 — degrade to evidence-only | ERROR event, retryable: true |
 | `PROVIDER_AUTH` | key missing or rejected | ERROR event |
+| `INTERNAL_ERROR` | unhandled server exception | ERROR event |
 
 ---
 
