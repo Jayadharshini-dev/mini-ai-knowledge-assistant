@@ -107,9 +107,9 @@ class VectorStore:
             tmp_path.replace(dest_path)
 
         def _atomic_write_json(dest_path: Path, data_dict: Any) -> None:
-            json_bytes = json.dumps(
-                data_dict, indent=2, ensure_ascii=False
-            ).encode("utf-8")
+            json_bytes = json.dumps(data_dict, indent=2, ensure_ascii=False).encode(
+                "utf-8"
+            )
             _atomic_write_bytes(dest_path, json_bytes)
 
         # 2. Write FAISS Index
@@ -137,9 +137,7 @@ class VectorStore:
         manifest_path = target_dir / "manifest.json"
 
         all_exist = (
-            faiss_path.exists()
-            and metadata_path.exists()
-            and manifest_path.exists()
+            faiss_path.exists() and metadata_path.exists() and manifest_path.exists()
         )
         if not all_exist:
             msg = f"Index files missing in '{target_dir}'."

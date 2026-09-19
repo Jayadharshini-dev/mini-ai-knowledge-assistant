@@ -1,0 +1,204 @@
+# Evaluation Dataset for Mini AI Knowledge Assistant
+# Grounded in the 3 real PDFs: edge_computing_iot.pdf, predictive_maintenance_ml.pdf, campus_resource_management.pdf
+# Status: PROPOSED — AWAITING PK APPROVAL
+
+metadata:
+  in_scope_count: 20
+  out_of_scope_count: 10
+  documents:
+    - edge_computing_iot.pdf
+    - predictive_maintenance_ml.pdf
+    - campus_resource_management.pdf
+
+questions:
+  # --- IN-SCOPE QUESTIONS (1-20) ---
+  - id: q01
+    in_scope: true
+    question: "Why does latency matter for edge computing control loops?"
+    expected_evidence:
+      - document: "edge_computing_iot.pdf"
+        page: 1
+
+  - id: q02
+    in_scope: true
+    question: "What are the four reference architecture tiers in edge computing?"
+    expected_evidence:
+      - document: "edge_computing_iot.pdf"
+        page: 2
+
+  - id: q03
+    in_scope: true
+    question: "What role does the edge gateway play in schema enforcement?"
+    expected_evidence:
+      - document: "edge_computing_iot.pdf"
+        page: 2
+
+  - id: q04
+    in_scope: true
+    question: "What are the stages of local signal acquisition and conditioning?"
+    expected_evidence:
+      - document: "edge_computing_iot.pdf"
+        page: 3
+
+  - id: q05
+    in_scope: true
+    question: "What are the typical range and data rates for BLE 5 and Wi-Fi 6?"
+    expected_evidence:
+      - document: "edge_computing_iot.pdf"
+        page: 3
+
+  - id: q06
+    in_scope: true
+    question: "How should quality of service settings be configured for telemetry?"
+    expected_evidence:
+      - document: "edge_computing_iot.pdf"
+        page: 4
+
+  - id: q07
+    in_scope: true
+    question: "What key rotation recommendations apply to edge gateway logging?"
+    expected_evidence:
+      - document: "edge_computing_iot.pdf"
+        page: 4
+
+  - id: q08
+    in_scope: true
+    question: "What model compression techniques are used for constrained edge devices?"
+    expected_evidence:
+      - document: "edge_computing_iot.pdf"
+        page: 5
+
+  - id: q09
+    in_scope: true
+    question: "How does condition-based maintenance differ from corrective maintenance?"
+    expected_evidence:
+      - document: "predictive_maintenance_ml.pdf"
+        page: 1
+
+  - id: q10
+    in_scope: true
+    question: "Why is headline accuracy an uninformative metric for predictive maintenance?"
+    expected_evidence:
+      - document: "predictive_maintenance_ml.pdf"
+        page: 1
+
+  - id: q11
+    in_scope: true
+    question: "What sensors are installed on the simulated centrifugal pumps?"
+    expected_evidence:
+      - document: "predictive_maintenance_ml.pdf"
+        page: 2
+
+  - id: q12
+    in_scope: true
+    question: "How many total 10-minute aggregate windows were collected in the pump study?"
+    expected_evidence:
+      - document: "predictive_maintenance_ml.pdf"
+        page: 2
+
+  - id: q13
+    in_scope: true
+    question: "Why is shaft speed critical when defining spectral vibration bands?"
+    expected_evidence:
+      - document: "predictive_maintenance_ml.pdf"
+        page: 3
+
+  - id: q14
+    in_scope: true
+    question: "What operating-context features are included so the model can distinguish genuine anomalies from ordinary load changes?"
+    expected_evidence:
+      - document: "predictive_maintenance_ml.pdf"
+        page: 4
+
+  - id: q15
+    in_scope: true
+    question: "What architecture is used for the 1D convolutional neural network model?"
+    expected_evidence:
+      - document: "predictive_maintenance_ml.pdf"
+        page: 5
+
+  - id: q16
+    in_scope: true
+    question: "How is the operating threshold selected on the validation set?"
+    expected_evidence:
+      - document: "predictive_maintenance_ml.pdf"
+        page: 5
+
+  - id: q17
+    in_scope: true
+    question: "What can an authenticated member do regarding resource availability and reservations?"
+    expected_evidence:
+      - document: "campus_resource_management.pdf"
+        page: 1
+
+  - id: q18
+    in_scope: true
+    question: "What components form the database and cache architecture for room booking?"
+    expected_evidence:
+      - document: "campus_resource_management.pdf"
+        page: 2
+
+  - id: q19
+    in_scope: true
+    question: "Why are cache misses not treated as errors in the resource management platform?"
+    expected_evidence:
+      - document: "campus_resource_management.pdf"
+        page: 3
+
+  - id: q20
+    in_scope: true
+    question: "Why does concurrency matter during the resource booking transaction?"
+    expected_evidence:
+      - document: "campus_resource_management.pdf"
+        page: 3
+
+  # --- OUT-OF-SCOPE QUESTIONS (21-30) ---
+  - id: q21
+    in_scope: false
+    question: "What is the capital city of France?"
+    expected_evidence: []
+
+  - id: q22
+    in_scope: false
+    question: "How do transformer attention mechanisms calculate dot product self-attention?"
+    expected_evidence: []
+
+  - id: q23
+    in_scope: false
+    question: "What are the rules of quantum electrodynamics in particle physics?"
+    expected_evidence: []
+
+  - id: q24
+    in_scope: false
+    question: "How do I bake a chocolate sourdough loaf at home?"
+    expected_evidence: []
+
+  - id: q25
+    in_scope: false
+    question: "Who won the 1994 FIFA World Cup final in Pasadena?"
+    expected_evidence: []
+
+  - id: q26
+    in_scope: false
+    question: "What is the formula for calculating Black-Scholes options pricing?"
+    expected_evidence: []
+
+  - id: q27
+    in_scope: false
+    question: "How do solar panels convert photons to direct current electricity?"
+    expected_evidence: []
+
+  - id: q28
+    in_scope: false
+    question: "What are the symptoms and treatments of acute appendicitis?"
+    expected_evidence: []
+
+  - id: q29
+    in_scope: false
+    question: "How does the Linux kernel manage virtual memory page tables?"
+    expected_evidence: []
+
+  - id: q30
+    in_scope: false
+    question: "What is the historical origin of Renaissance oil painting techniques?"
+    expected_evidence: []

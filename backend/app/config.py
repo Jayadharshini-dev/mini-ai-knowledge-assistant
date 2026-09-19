@@ -35,7 +35,7 @@ class AppConfig(BaseSettings):
 
     # Retrieval & Gate
     TOP_K: int = 4
-    RELEVANCE_THRESHOLD: float = 0.32
+    RELEVANCE_THRESHOLD: float = 0.67
 
     # LLM Provider
     LLM_PROVIDER: str = "gemini"

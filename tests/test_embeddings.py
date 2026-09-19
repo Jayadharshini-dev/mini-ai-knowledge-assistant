@@ -85,4 +85,3 @@ def test_bge_query_prefix_behavior():
     assert chunk_vec.shape == (1, 384)
     # Query vector and raw chunk vector must differ due to BGE query instruction prefix
     assert not np.allclose(query_vec, chunk_vec, atol=1e-3)
-
