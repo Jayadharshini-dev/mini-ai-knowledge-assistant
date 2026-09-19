@@ -54,3 +54,18 @@ def test_loader_invalid_pdf_bytes_raises_invalid_pdf():
 
     assert exc_info.value.code == ErrorCode.INVALID_PDF
     assert exc_info.value.status_code == 400
+
+
+def test_loader_page_count_matches_pymupdf():
+    import fitz
+
+    pages_text = ["Page 1 text", "Page 2 text", "Page 3 text", "Page 4 text"]
+    pdf_bytes = create_test_pdf_bytes(pages_text)
+
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+    expected_page_count = len(doc)
+
+    pages = load_pdf_pages(pdf_bytes, "multi_page.pdf")
+
+    assert len(pages) == expected_page_count == 4
+    assert max(p.page_number for p in pages) == expected_page_count

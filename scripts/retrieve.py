@@ -61,9 +61,7 @@ def inspect_retrieval(
         status_flag = (
             "PASS [>= Threshold]" if chunk.above_threshold else "FAIL [< Threshold]"
         )
-        print(
-            f"Rank #{chunk.rank} | Score: {chunk.score:.4f} | Status: {status_flag}"
-        )
+        print(f"Rank #{chunk.rank} | Score: {chunk.score:.4f} | Status: {status_flag}")
         print(
             f"Doc: {chunk.chunk.document} | Page: {chunk.chunk.page} |"
             f" ID: {chunk.chunk.chunk_id}"

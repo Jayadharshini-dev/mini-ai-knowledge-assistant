@@ -41,6 +41,9 @@ class AppConfig(BaseSettings):
     LLM_PROVIDER: str = "gemini"
     LLM_MODEL: str = "gemini-2.5-flash"
     GEMINI_API_KEY: Optional[str] = None
+    LLM_TEMPERATURE: float = 0.0
+    LLM_MAX_OUTPUT_TOKENS: int = 1024
+    LLM_REQUEST_TIMEOUT: int = 30
 
 
 # Single shared configuration instance
